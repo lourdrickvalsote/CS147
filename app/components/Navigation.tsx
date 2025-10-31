@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { getImagePath } from '@/app/lib/getBasePath'
 
 export default function Navigation() {
   const scrollToSection = (id: string) => {
@@ -25,7 +26,7 @@ export default function Navigation() {
           }}
         >
           <img
-            src="/images/chatatouille.png"
+            src={getImagePath('/images/chatatouille.png')}
             alt="Chatatouille"
             style={{
               height: '70px',

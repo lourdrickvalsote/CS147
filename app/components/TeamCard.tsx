@@ -1,5 +1,7 @@
 'use client'
 
+import { getImagePath } from '@/app/lib/getBasePath'
+
 interface TeamCardProps {
   name: string
   role: string
@@ -26,7 +28,7 @@ export default function TeamCard({
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
         }}>
           <img
-            src={image}
+            src={getImagePath(image)}
             alt={name}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />

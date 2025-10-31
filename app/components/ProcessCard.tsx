@@ -1,5 +1,7 @@
 'use client'
 
+import { getImagePath } from '@/app/lib/getBasePath'
+
 interface ProcessCardProps {
   title: string
   description: string
@@ -41,7 +43,7 @@ export default function ProcessCard({
         backgroundColor: '#E5E5E5',
       }}>
         <img
-          src={image}
+          src={getImagePath(image)}
           alt={title}
           style={{
             width: '100%',

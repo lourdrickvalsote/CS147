@@ -1,5 +1,7 @@
 "use client";
 
+import { getImagePath } from '@/app/lib/getBasePath'
+
 export default function AboutChatatouille() {
   return (
     <section
@@ -81,9 +83,9 @@ export default function AboutChatatouille() {
                 height: "auto",
                 display: "block",
               }}
-              poster="/images/elliott.png"
+              poster={getImagePath('/images/elliott.png')}
             >
-              <source src="/images/conceptvideo_final.mp4" type="video/mp4" />
+              <source src={getImagePath('/images/conceptvideo_final.mp4')} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
