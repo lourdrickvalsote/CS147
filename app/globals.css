@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream: #F8F3ED;
+    --color-tan: #F1E3D3;
+    --color-terracotta: #E07A5F;
+    --color-burgundy: #690B22;
+    --color-forest-green: #34623F;
+    --color-charcoal: #121211;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  color: #121211;
+  background-color: #F8F3ED;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Serif Text", serif;
+  color: #690B22;
+}
