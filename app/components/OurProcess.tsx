@@ -85,12 +85,20 @@ const processSteps = [
     image: "/images/elliott.png",
     tags: [
       {
+        label: "Prototype (Figma)",
+        href: "https://www.figma.com/proto/9DG9mbpaLZATdm5rEOfaPA/Medium-Fi-Prototype?node-id=131-303&t=hzQKMhcCpZd8thYD-1&starting-point-node-id=131%3A303",
+      },
+      {
         label: "Slides (pdf)",
-        href: "#",
+        href: "https://drive.google.com/file/d/1GVSctcl1Ve59n3H40OElSvJZ5wJ-zTFP/view?usp=sharing",
       },
       {
         label: "Slides (pptx)",
-        href: "#",
+        href: "https://docs.google.com/presentation/d/10zGJz--J89g77cNYmvdj05hX2JOB9LaY/edit?usp=sharing&ouid=113402074502964276518&rtpof=true&sd=true",
+      },
+      {
+        label: "README (pdf)",
+        href: "https://docs.google.com/document/d/1rPq9DPEhS5siktlLNJsG-Dnchnw2ZiqNT1U--Fy0bw8/edit?usp=sharing",
       },
     ],
   },
