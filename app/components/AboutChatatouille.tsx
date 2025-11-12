@@ -1,12 +1,22 @@
 "use client";
 
 import { getImagePath } from '@/app/lib/getBasePath'
+import { useIntersection } from '@/app/lib/useIntersection'
 
 export default function AboutChatatouille() {
+  const { elementRef, isVisible } = useIntersection({ threshold: 0.1 })
+
   return (
     <section
+      ref={elementRef}
       id="about"
-      style={{ padding: "3rem 1rem", backgroundColor: "#F8F3ED" }}
+      style={{
+        padding: "3rem 1rem",
+        backgroundColor: "#F8F3ED",
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'opacity 0.6s ease, transform 0.6s ease',
+      }}
     >
       <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
         <h2
@@ -22,73 +32,38 @@ export default function AboutChatatouille() {
           About Chatatouille
         </h2>
 
-        {/* Two Column Layout: Left Text, Right Video */}
+        {/* Text Content */}
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "3rem",
-            alignItems: "center",
+            maxWidth: "600px",
+            margin: "0 auto",
           }}
         >
-          {/* Left: Text Content */}
-          <div>
-            <h3
-              style={{
-                fontSize: "24px",
-                fontFamily: "DM Serif Text, serif",
-                fontWeight: "bold",
-                color: "#121211",
-                marginBottom: "1.5rem",
-              }}
-            >
-              Chatatouille
-            </h3>
-            <p
-              style={{
-                fontSize: "15px",
-                color: "#555555",
-                lineHeight: "1.8",
-                marginBottom: "1.5rem",
-              }}
-            >
-              Fill in later.
-            </p>
-            <p
-              style={{
-                fontSize: "15px",
-                color: "#555555",
-                lineHeight: "1.8",
-              }}
-            >
-              Fill in later.
-            </p>
-          </div>
-
-          {/* Right: Video Container */}
-          <div
+          <p
             style={{
-              backgroundColor: "#121211",
-              borderRadius: "12px",
-              overflow: "hidden",
-              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
+              fontSize: "15px",
+              color: "#555555",
+              lineHeight: "1.8",
+              marginBottom: "1.5rem",
             }}
           >
-            <video
-              width="100%"
-              height="auto"
-              controls
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-              }}
-              poster={getImagePath('/images/elliott.png')}
-            >
-              <source src={getImagePath('/images/conceptvideo_final.mp4')} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+            Chatatouille aims to help novice cooks who want to try new recipes
+            and feel calm, confident, and in control as they master every step
+            in the kitchen.
+          </p>
+          <p
+            style={{
+              fontSize: "15px",
+              color: "#555555",
+              lineHeight: "1.8",
+            }}
+          >
+            Chatatouille is your personal sous-chef that turns any recipe—video
+            or written—into a clear, step-by-step guide users can follow at
+            their own pace. Chatatouille combines video playback, fully
+            customizable written instructions, and a responsive AI voice
+            assistant to make our users feel in control.
+          </p>
         </div>
       </div>
     </section>

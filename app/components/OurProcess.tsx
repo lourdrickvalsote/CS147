@@ -1,9 +1,12 @@
+'use client'
+
 import ProcessCard from "./ProcessCard";
+import { useIntersection } from "@/app/lib/useIntersection";
 
 const processSteps = [
   {
     title: "A1: Needfinding",
-    description: "Fill in later.",
+    description: "Our needfinding journey in the adulting space. We conducted interviews with a diverse group of participants to uncover real emotions and pain points.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -19,7 +22,7 @@ const processSteps = [
   {
     title:
       "A2: Additional Needfinding, POVs, HMWs, Brainstorming & Experience Prototypes",
-    description: "Fill in later.",
+    description: "We generated POVs and 'How Might We?' questions from our interviews to look deeper into common problems. Then, we brainstormed solutions and picked three to experience prototype, testing the critical assumptions we made in each.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -34,7 +37,7 @@ const processSteps = [
   },
   {
     title: "A3: Website",
-    description: "Fill in later.",
+    description: "You're looking at it!",
     image: "/images/elliott.png",
     tags: [
       { label: "Prototype", href: "#" },
@@ -43,7 +46,7 @@ const processSteps = [
   },
   {
     title: "A4: Concept Video",
-    description: "Fill in later.",
+    description: "We landed on a solution that best addressed our users' problems: Chatatouille! We conducted market research and discussed ethical implications to confirm the novelty and inclusivity of our solution. Watch our concept video to understand Chatatouille's value (with no UI in sight)!.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -62,7 +65,7 @@ const processSteps = [
   },
   {
     title: "A5: Sketching, Low-fi Prototyping & Pilot Usability Testing",
-    description: "Fill in later.",
+    description: "Our low-fi prototype of Chatatouille. We created task flows and sketched them onto paper to test basic design choices on potential users, grounding our evolving design in real user experiences.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -81,7 +84,7 @@ const processSteps = [
   },
   {
     title: "A6: Interactive Medium-Fi Prototype",
-    description: "Fill in later.",
+    description: "Our Medium-Fi Prototype of Chatatouille. We used Figma to implement a prototype of Chatatouille with our intended design elements and transitions. The Medium-Fi prototype does not have a backend, but it demonstrates our task flows in a higher fidelity than before.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -104,7 +107,7 @@ const processSteps = [
   },
   {
     title: "A7: Heuristic Evaluation",
-    description: "Fill in later.",
+    description: "This section is still under construction.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -119,7 +122,7 @@ const processSteps = [
   },
   {
     title: "A8: Hi-fi Portotype",
-    description: "Fill in later.",
+    description: "This section is still under construction.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -134,7 +137,7 @@ const processSteps = [
   },
   {
     title: "A10: Poster, Pitch, Demo Video",
-    description: "Fill in later.",
+    description: "This section is still under construction.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -149,7 +152,7 @@ const processSteps = [
   },
   {
     title: "A11: Final Report",
-    description: "Fill in later.",
+    description: "This section is still under construction.",
     image: "/images/elliott.png",
     tags: [
       {
@@ -165,10 +168,19 @@ const processSteps = [
 ];
 
 export default function OurProcess() {
+  const { elementRef, isVisible } = useIntersection({ threshold: 0.1 });
+
   return (
     <section
+      ref={elementRef}
       id="process"
-      style={{ padding: "3rem 1rem", backgroundColor: "#F8F3ED" }}
+      style={{
+        padding: "3rem 1rem",
+        backgroundColor: "#F8F3ED",
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'opacity 0.6s ease, transform 0.6s ease',
+      }}
     >
       <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
         <h2
@@ -194,7 +206,7 @@ export default function OurProcess() {
             lineHeight: "1.6",
           }}
         >
-          Fill in later.
+          Learn more about how Chatatouille was created.
         </p>
 
         {/* Responsive Grid Layout */}

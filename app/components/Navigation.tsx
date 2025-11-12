@@ -50,13 +50,13 @@ export default function Navigation() {
         </Link>
 
         {/* Navigation Links */}
-        <nav style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', height: '100%' }}>
+        <nav style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', height: '100%' }}>
           <button
             onClick={() => scrollToSection('about')}
             style={{
               backgroundColor: 'rgba(248, 243, 237, 0.2)',
               color: '#F8F3ED',
-              padding: '0.75rem 1.75rem',
+              padding: '0.5rem 1rem',
               borderRadius: '9999px',
               fontWeight: 600,
               fontSize: '16px',
@@ -66,7 +66,7 @@ export default function Navigation() {
               fontFamily: 'Source Sans 3, sans-serif',
               display: 'flex',
               alignItems: 'center',
-              height: '44px',
+              height: '36px',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#F1E3D3'
@@ -84,7 +84,7 @@ export default function Navigation() {
             style={{
               backgroundColor: 'rgba(248, 243, 237, 0.2)',
               color: '#F8F3ED',
-              padding: '0.75rem 1.75rem',
+              padding: '0.5rem 1rem',
               borderRadius: '9999px',
               fontWeight: 600,
               fontSize: '16px',
@@ -94,7 +94,7 @@ export default function Navigation() {
               fontFamily: 'Source Sans 3, sans-serif',
               display: 'flex',
               alignItems: 'center',
-              height: '44px',
+              height: '36px',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#F1E3D3'
@@ -108,11 +108,11 @@ export default function Navigation() {
             Team
           </button>
           <button
-            onClick={() => scrollToSection('process')}
+            onClick={() => scrollToSection('concept')}
             style={{
               backgroundColor: 'rgba(248, 243, 237, 0.2)',
               color: '#F8F3ED',
-              padding: '0.75rem 1.75rem',
+              padding: '0.5rem 1rem',
               borderRadius: '9999px',
               fontWeight: 600,
               fontSize: '16px',
@@ -122,7 +122,35 @@ export default function Navigation() {
               fontFamily: 'Source Sans 3, sans-serif',
               display: 'flex',
               alignItems: 'center',
-              height: '44px',
+              height: '36px',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#F1E3D3'
+              e.currentTarget.style.color = '#690B22'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(248, 243, 237, 0.2)'
+              e.currentTarget.style.color = '#F8F3ED'
+            }}
+          >
+            Video
+          </button>
+          <button
+            onClick={() => scrollToSection('process')}
+            style={{
+              backgroundColor: 'rgba(248, 243, 237, 0.2)',
+              color: '#F8F3ED',
+              padding: '0.5rem 1rem',
+              borderRadius: '9999px',
+              fontWeight: 600,
+              fontSize: '16px',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 250ms ease',
+              fontFamily: 'Source Sans 3, sans-serif',
+              display: 'flex',
+              alignItems: 'center',
+              height: '36px',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#F1E3D3'
