@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import TeamCard from "./TeamCard";
 import { useIntersection } from "@/app/lib/useIntersection";
@@ -41,8 +41,8 @@ export default function MeetOurTeam() {
         padding: "2rem 1rem",
         backgroundColor: "#F8F3ED",
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 0.6s ease, transform 0.6s ease',
+        transform: isVisible ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.6s ease, transform 0.6s ease",
       }}
       className="md:py-24"
     >

@@ -202,64 +202,64 @@ export default function Navigation() {
       <style>{`
         @media (min-width: 768px) {
           #nav-container {
-            padding: 1.25rem 2rem;
-            min-height: 80px;
+            padding: 0.875rem 1.5rem !important;
+            min-height: 62px !important;
           }
           #nav-container img {
-            height: 80px;
+            height: 62px !important;
           }
           #nav-container span {
-            font-size: 28px;
+            font-size: 26px !important;
           }
           #nav-container button {
-            padding: 0.5rem 1rem;
-            font-size: 16px;
-            min-height: 40px;
+            padding: 0.45rem 0.9rem !important;
+            font-size: 14px !important;
+            min-height: 38px !important;
           }
           #nav-container nav {
-            gap: 0.5rem;
+            gap: 0.45rem !important;
           }
         }
 
         @media (min-width: 1024px) {
           #nav-container {
-            padding: 1.5rem 3rem;
-            min-height: 96px;
+            padding: 0.95rem 2rem !important;
+            min-height: 68px !important;
           }
           #nav-container img {
-            height: 96px;
+            height: 68px !important;
           }
           #nav-container span {
-            font-size: 32px;
+            font-size: 29px !important;
           }
           #nav-container button {
-            padding: 0.75rem 1.25rem;
-            font-size: 18px;
-            min-height: 48px;
+            padding: 0.5rem 1rem !important;
+            font-size: 15px !important;
+            min-height: 41px !important;
           }
           #nav-container nav {
-            gap: 0.75rem;
+            gap: 0.5rem !important;
           }
         }
 
         @media (min-width: 1280px) {
           #nav-container {
-            padding: 1.5rem 3rem;
-            min-height: 112px;
+            padding: 1.05rem 2.5rem !important;
+            min-height: 74px !important;
           }
           #nav-container img {
-            height: 112px;
+            height: 74px !important;
           }
           #nav-container span {
-            font-size: 40px;
+            font-size: 31px !important;
           }
           #nav-container button {
-            padding: 1rem 1.5rem;
-            font-size: 20px;
-            min-height: 56px;
+            padding: 0.55rem 1.1rem !important;
+            font-size: 16px !important;
+            min-height: 44px !important;
           }
           #nav-container nav {
-            gap: 1rem;
+            gap: 0.55rem !important;
           }
         }
       `}</style>

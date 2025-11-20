@@ -1,3 +1,5 @@
+import { getImagePath } from "@/app/lib/getBasePath";
+
 export default function Hero() {
   return (
     <section
@@ -91,7 +93,7 @@ export default function Hero() {
           {/* Stanford Branding */}
           <div style={{ marginBottom: "3rem" }}>
             <img
-              src="/images/stanford-logo.png"
+              src={getImagePath("/images/stanfordlogo.png")}
               alt="Stanford University Logo"
               style={{
                 height: "80px",
@@ -150,7 +152,7 @@ export default function Hero() {
           className="hidden md:flex"
         >
           <img
-            src="/images/chatatouille-screens.png"
+            src={getImagePath("/images/chatatouillescreens.png")}
             alt="Chatatouille App Screens"
             style={{
               maxWidth: "100%",
