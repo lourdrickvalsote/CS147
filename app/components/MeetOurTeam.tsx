@@ -63,22 +63,33 @@ export default function MeetOurTeam() {
 
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            display: "flex",
+            flexWrap: "wrap",
             gap: "0.25rem",
             maxWidth: "900px",
             margin: "0 auto",
+            justifyContent: "center",
           }}
+          id="team-flex-container"
           className="md:gap-1"
         >
           {teamMembers.map((member, index) => (
-            <TeamCard
+            <div
               key={index}
-              name={member.name}
-              role={member.role}
-              image={member.image}
-              linkedinUrl={member.linkedinUrl}
-            />
+              style={{
+                flex: "1 1 auto",
+                minWidth: "150px",
+                maxWidth: "calc(50% - 0.125rem)",
+              }}
+              id="team-card-wrapper"
+            >
+              <TeamCard
+                name={member.name}
+                role={member.role}
+                image={member.image}
+                linkedinUrl={member.linkedinUrl}
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -96,6 +107,17 @@ export default function MeetOurTeam() {
           }
           .md\\:gap-1 {
             gap: 0.25rem;
+          }
+          #team-card-wrapper {
+            flex: 1 1 auto !important;
+            maxWidth: calc(33.333% - 0.167rem) !important;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          #team-card-wrapper {
+            flex: 1 1 auto !important;
+            maxWidth: calc(25% - 0.1875rem) !important;
           }
         }
       `}</style>

@@ -34,18 +34,26 @@ export default function ConceptVideo() {
           Concept Video
         </h2>
 
-        {/* Two Column Layout */}
+        {/* Outer Flexbox - Text/Awards Column and Video */}
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1.2fr",
-            gap: "3rem",
-            alignItems: "start",
+            display: "flex",
+            flexDirection: "column",
+            gap: "2rem",
+            alignItems: "center",
           }}
+          id="concept-outer-flex"
         >
-          {/* Left Column - Context Text and Badges */}
+          {/* Inner Flexbox - Context Text and Awards */}
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "2rem",
+              flex: 1,
+              minWidth: 0,
+            }}
+            id="concept-text-awards"
           >
             <div>
               <p
@@ -129,6 +137,7 @@ export default function ConceptVideo() {
               overflow: "hidden",
               boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
             }}
+            id="concept-video"
           >
             <video
               width="100%"
@@ -139,7 +148,7 @@ export default function ConceptVideo() {
                 height: "auto",
                 display: "block",
               }}
-              poster={getImagePath("/images/elliott.jpeg")}
+              poster={getImagePath("/images/elliott.png")}
               title="Chatatouille Concept Video - CS 147 Film Festival"
               aria-label="Chatatouille concept video showcasing the app's features for helping novice cooks master recipes"
             >
@@ -154,10 +163,17 @@ export default function ConceptVideo() {
       </div>
 
       <style>{`
-        @media (max-width: 1024px) {
-          div[style*="gridTemplateColumns"] {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
+        @media (min-width: 1024px) {
+          #concept-outer-flex {
+            flex-direction: row !important;
+            gap: 3rem !important;
+            align-items: flex-start !important;
+          }
+          #concept-text-awards {
+            flex: 1 !important;
+          }
+          #concept-video {
+            flex: 1 !important;
           }
         }
       `}</style>

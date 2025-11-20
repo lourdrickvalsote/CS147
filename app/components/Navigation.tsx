@@ -20,12 +20,14 @@ export default function Navigation() {
         style={{
           maxWidth: "90rem",
           margin: "0 auto",
-          padding: "1.5rem 2rem",
+          padding: "0.75rem 1rem",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          height: "100px",
+          height: "auto",
+          minHeight: "60px",
         }}
+        id="nav-container"
       >
         {/* Logo */}
         <Link
@@ -42,21 +44,23 @@ export default function Navigation() {
             src={getImagePath("/images/chatatouille-logo.png")}
             alt="Chatatouille"
             style={{
-              height: "70px",
+              height: "45px",
               width: "auto",
               objectFit: "contain",
             }}
+            className="md:h-20 lg:h-24 xl:h-28"
           />
           <span
             style={{
               color: "#F8F3ED",
-              fontSize: "28px",
+              fontSize: "20px",
               fontWeight: "bold",
               fontFamily: "DM Serif Text, serif",
-              display: "flex",
+              display: "none",
               alignItems: "center",
               height: "100%",
             }}
+            className="md:flex md:text-3xl lg:text-4xl xl:text-5xl"
           >
             Chatatouille
           </span>
@@ -66,28 +70,30 @@ export default function Navigation() {
         <nav
           style={{
             display: "flex",
-            gap: "0.5rem",
+            gap: "0.25rem",
             alignItems: "center",
             height: "100%",
           }}
+          className="md:gap-2"
         >
           <button
             onClick={() => scrollToSection("about")}
             style={{
               backgroundColor: "rgba(248, 243, 237, 0.2)",
               color: "#F8F3ED",
-              padding: "0.5rem 1rem",
+              padding: "0.35rem 0.75rem",
               borderRadius: "9999px",
               fontWeight: 600,
-              fontSize: "16px",
+              fontSize: "13px",
               border: "none",
               cursor: "pointer",
               transition: "all 250ms ease",
               fontFamily: "Source Sans 3, sans-serif",
               display: "flex",
               alignItems: "center",
-              height: "36px",
+              minHeight: "32px",
             }}
+            className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#F1E3D3";
               e.currentTarget.style.color = "#690B22";
@@ -105,18 +111,19 @@ export default function Navigation() {
             style={{
               backgroundColor: "rgba(248, 243, 237, 0.2)",
               color: "#F8F3ED",
-              padding: "0.5rem 1rem",
+              padding: "0.35rem 0.75rem",
               borderRadius: "9999px",
               fontWeight: 600,
-              fontSize: "16px",
+              fontSize: "13px",
               border: "none",
               cursor: "pointer",
               transition: "all 250ms ease",
               fontFamily: "Source Sans 3, sans-serif",
               display: "flex",
               alignItems: "center",
-              height: "36px",
+              minHeight: "32px",
             }}
+            className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#F1E3D3";
               e.currentTarget.style.color = "#690B22";
@@ -134,18 +141,19 @@ export default function Navigation() {
             style={{
               backgroundColor: "rgba(248, 243, 237, 0.2)",
               color: "#F8F3ED",
-              padding: "0.5rem 1rem",
+              padding: "0.35rem 0.75rem",
               borderRadius: "9999px",
               fontWeight: 600,
-              fontSize: "16px",
+              fontSize: "13px",
               border: "none",
               cursor: "pointer",
               transition: "all 250ms ease",
               fontFamily: "Source Sans 3, sans-serif",
               display: "flex",
               alignItems: "center",
-              height: "36px",
+              minHeight: "32px",
             }}
+            className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#F1E3D3";
               e.currentTarget.style.color = "#690B22";
@@ -163,18 +171,19 @@ export default function Navigation() {
             style={{
               backgroundColor: "rgba(248, 243, 237, 0.2)",
               color: "#F8F3ED",
-              padding: "0.5rem 1rem",
+              padding: "0.35rem 0.75rem",
               borderRadius: "9999px",
               fontWeight: 600,
-              fontSize: "16px",
+              fontSize: "13px",
               border: "none",
               cursor: "pointer",
               transition: "all 250ms ease",
               fontFamily: "Source Sans 3, sans-serif",
               display: "flex",
               alignItems: "center",
-              height: "36px",
+              minHeight: "32px",
             }}
+            className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#F1E3D3";
               e.currentTarget.style.color = "#690B22";
@@ -189,6 +198,71 @@ export default function Navigation() {
           </button>
         </nav>
       </div>
+
+      <style>{`
+        @media (min-width: 768px) {
+          #nav-container {
+            padding: 1.25rem 2rem;
+            min-height: 80px;
+          }
+          #nav-container img {
+            height: 80px;
+          }
+          #nav-container span {
+            font-size: 28px;
+          }
+          #nav-container button {
+            padding: 0.5rem 1rem;
+            font-size: 16px;
+            min-height: 40px;
+          }
+          #nav-container nav {
+            gap: 0.5rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          #nav-container {
+            padding: 1.5rem 3rem;
+            min-height: 96px;
+          }
+          #nav-container img {
+            height: 96px;
+          }
+          #nav-container span {
+            font-size: 32px;
+          }
+          #nav-container button {
+            padding: 0.75rem 1.25rem;
+            font-size: 18px;
+            min-height: 48px;
+          }
+          #nav-container nav {
+            gap: 0.75rem;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          #nav-container {
+            padding: 1.5rem 3rem;
+            min-height: 112px;
+          }
+          #nav-container img {
+            height: 112px;
+          }
+          #nav-container span {
+            font-size: 40px;
+          }
+          #nav-container button {
+            padding: 1rem 1.5rem;
+            font-size: 20px;
+            min-height: 56px;
+          }
+          #nav-container nav {
+            gap: 1rem;
+          }
+        }
+      `}</style>
     </header>
   );
 }
