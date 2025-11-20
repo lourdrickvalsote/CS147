@@ -14,8 +14,8 @@ export default function ConceptVideo() {
         padding: "2rem 1rem",
         backgroundColor: "#F8F3ED",
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 0.6s ease, transform 0.6s ease',
+        transform: isVisible ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.6s ease, transform 0.6s ease",
       }}
       className="md:py-24"
     >
@@ -139,7 +139,7 @@ export default function ConceptVideo() {
                 height: "auto",
                 display: "block",
               }}
-              poster={getImagePath("/images/elliott.png")}
+              poster={getImagePath("/images/elliott.jpeg")}
               title="Chatatouille Concept Video - CS 147 Film Festival"
               aria-label="Chatatouille concept video showcasing the app's features for helping novice cooks master recipes"
             >
