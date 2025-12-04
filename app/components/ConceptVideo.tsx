@@ -22,19 +22,19 @@ export default function ConceptVideo() {
       <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
         <h2
           style={{
-            fontSize: "32px",
+            fontSize: "3rem",
             fontFamily: "DM Serif Text, serif",
             fontWeight: "bold",
             color: "#121211",
             textAlign: "center",
             marginBottom: "2rem",
           }}
-          className="md:text-5xl md:mb-12"
+          className="md:mb-12"
         >
           Concept Video
         </h2>
 
-        {/* Outer Flexbox - Text/Awards Column and Video */}
+        {/* Outer Flexbox - Video and Text/Awards Column */}
         <div
           style={{
             display: "flex",
@@ -44,6 +44,37 @@ export default function ConceptVideo() {
           }}
           id="concept-outer-flex"
         >
+          {/* Left Column - Video */}
+          <div
+            style={{
+              backgroundColor: "#121211",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
+            }}
+            id="concept-video"
+          >
+            <video
+              width="100%"
+              height="auto"
+              controls
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+              }}
+              poster={getImagePath("/images/elliott.png")}
+              title="Chatatouille Concept Video - CS 147 Film Festival"
+              aria-label="Chatatouille concept video showcasing the app's features for helping novice cooks master recipes"
+            >
+              <source
+                src={getImagePath("/images/conceptvideo_final.mp4")}
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
           {/* Inner Flexbox - Context Text and Awards */}
           <div
             style={{
@@ -58,7 +89,7 @@ export default function ConceptVideo() {
             <div>
               <p
                 style={{
-                  fontSize: "15px",
+                  fontSize: "18px",
                   color: "#333333",
                   lineHeight: "1.8",
                   marginBottom: "1rem",
@@ -72,7 +103,7 @@ export default function ConceptVideo() {
               </p>
               <p
                 style={{
-                  fontSize: "15px",
+                  fontSize: "18px",
                   color: "#333333",
                   lineHeight: "1.8",
                 }}
@@ -110,7 +141,7 @@ export default function ConceptVideo() {
                 src={getImagePath("/images/bestoverall.png")}
                 alt="Best Overall Award - CS 147 Film Festival"
                 style={{
-                  width: "160px",
+                  width: "130px",
                   height: "auto",
                   objectFit: "contain",
                 }}
@@ -127,37 +158,6 @@ export default function ConceptVideo() {
                 }}
               />
             </div>
-          </div>
-
-          {/* Right Column - Video */}
-          <div
-            style={{
-              backgroundColor: "#121211",
-              borderRadius: "12px",
-              overflow: "hidden",
-              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
-            }}
-            id="concept-video"
-          >
-            <video
-              width="100%"
-              height="auto"
-              controls
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-              }}
-              poster={getImagePath("/images/elliott.png")}
-              title="Chatatouille Concept Video - CS 147 Film Festival"
-              aria-label="Chatatouille concept video showcasing the app's features for helping novice cooks master recipes"
-            >
-              <source
-                src={getImagePath("/images/conceptvideo_final.mp4")}
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                fontSize: "20px",
+                fontSize: "22px",
                 fontFamily: "DM Serif Text, serif",
                 fontWeight: "bold",
                 marginBottom: "0.75rem",
@@ -41,7 +41,7 @@ export default function Footer() {
             </h4>
             <p
               style={{
-                fontSize: "14px",
+                fontSize: "15px",
                 color: "#CCCCCC",
                 lineHeight: "1.6",
                 margin: 0,
@@ -75,30 +75,6 @@ export default function Footer() {
             >
               <li style={{ marginBottom: "0.75rem" }}>
                 <a
-                  href="#hero"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById("hero");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  style={{
-                    color: "#CCCCCC",
-                    textDecoration: "none",
-                    fontSize: "14px",
-                    transition: "color 150ms ease",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "#F1E3D3")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#CCCCCC")
-                  }
-                >
-                  Home
-                </a>
-              </li>
-              <li style={{ marginBottom: "0.75rem" }}>
-                <a
                   href="#about"
                   onClick={(e) => {
                     e.preventDefault();
@@ -108,7 +84,7 @@ export default function Footer() {
                   style={{
                     color: "#CCCCCC",
                     textDecoration: "none",
-                    fontSize: "14px",
+                    fontSize: "15px",
                     transition: "color 150ms ease",
                   }}
                   onMouseEnter={(e) =>
@@ -132,7 +108,7 @@ export default function Footer() {
                   style={{
                     color: "#CCCCCC",
                     textDecoration: "none",
-                    fontSize: "14px",
+                    fontSize: "15px",
                     transition: "color 150ms ease",
                   }}
                   onMouseEnter={(e) =>
@@ -147,6 +123,30 @@ export default function Footer() {
               </li>
               <li style={{ marginBottom: "0.75rem" }}>
                 <a
+                  href="#team"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("team");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  style={{
+                    color: "#CCCCCC",
+                    textDecoration: "none",
+                    fontSize: "15px",
+                    transition: "color 150ms ease",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "#F1E3D3")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "#CCCCCC")
+                  }
+                >
+                  Team
+                </a>
+              </li>
+              <li style={{ marginBottom: "0.75rem" }}>
+                <a
                   href="#process"
                   onClick={(e) => {
                     e.preventDefault();
@@ -156,7 +156,7 @@ export default function Footer() {
                   style={{
                     color: "#CCCCCC",
                     textDecoration: "none",
-                    fontSize: "14px",
+                    fontSize: "15px",
                     transition: "color 150ms ease",
                   }}
                   onMouseEnter={(e) =>
@@ -188,7 +188,7 @@ export default function Footer() {
             </h4>
             <p
               style={{
-                fontSize: "14px",
+                fontSize: "15px",
                 color: "#CCCCCC",
                 lineHeight: "1.6",
                 margin: 0,
@@ -214,7 +214,7 @@ export default function Footer() {
         >
           <p
             style={{
-              fontSize: "13px",
+              fontSize: "14px",
               color: "#999999",
               margin: 0,
             }}

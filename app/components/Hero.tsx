@@ -54,7 +54,7 @@ export default function Hero() {
             <div style={{ marginTop: "0" }}>
               <p
                 style={{
-                  fontSize: "26px",
+                  fontSize: "30px",
                   fontFamily: "Source Sans 3, sans-serif",
                   color: "#121211",
                   fontWeight: "300",
@@ -76,7 +76,7 @@ export default function Hero() {
           >
             <p
               style={{
-                fontSize: "18px",
+                fontSize: "20px",
                 color: "#333333",
                 fontStyle: "italic",
                 lineHeight: "1.7",
@@ -116,13 +116,13 @@ export default function Hero() {
           >
             <p
               style={{
-                fontSize: "17px",
+                fontSize: "19px",
                 color: "#333333",
                 fontFamily: "Source Sans 3, sans-serif",
                 fontWeight: "500",
               }}
             >
-              click through to see more
+              scroll down to see more
             </p>
             <svg
               style={{ width: "32px", height: "32px", color: "#690B22" }}
@@ -152,7 +152,7 @@ export default function Hero() {
           className="hidden md:flex"
         >
           <img
-            src={getImagePath("/images/chatatouillescreens.png")}
+            src={getImagePath("/images/chatatouillescreens3.png")}
             alt="Chatatouille App Screens"
             style={{
               maxWidth: "100%",
@@ -196,19 +196,19 @@ export default function Hero() {
             display: flex !important;
           }
           .md\\:text-lg {
-            font-size: 18px;
+            font-size: 20px;
           }
           .md\\:text-8xl {
-            font-size: 64px;
+            font-size: 72px;
           }
           .md\\:text-4xl {
-            font-size: 36px;
+            font-size: 42px;
           }
           .md\\:h-32 {
             height: 128px;
           }
           .lg\\:text-9xl {
-            font-size: 128px;
+            font-size: 144px;
           }
         }
       `}</style>

@@ -6,26 +6,26 @@ import { useIntersection } from "@/app/lib/useIntersection";
 const teamMembers = [
   {
     name: "Reyna Duffy",
-    role: "UI/UX Designer",
-    image: "/images/reyna.png", // Replace with reyna.png when available
+    role: "Lead UI/UX Designer",
+    image: "/images/reyna.png",
     linkedinUrl: "https://www.linkedin.com/in/reynaduffy/",
   },
   {
     name: "Evan Robinson",
-    role: "Product Manager",
-    image: "/images/evan.png", // Replace with evan.png when available
+    role: "Lead Product Manager",
+    image: "/images/evan.png",
     linkedinUrl: "https://www.linkedin.com/in/evanrobinsonstanford/",
   },
   {
-    name: "Elliott Douglass Rodgers Jr.",
-    role: "Mobile Developer",
+    name: "Elliott Rodgers",
+    role: "Lead Software Engineer",
     image: "/images/eli.png",
     linkedinUrl: "https://www.linkedin.com/in/elliott-rodgers-jr-b477a9241/",
   },
   {
     name: "Lour Drick Valsote",
-    role: "Product Engineer",
-    image: "/images/lour.png", // Replace with lourdrick.png when available
+    role: "Lead Product Engineer",
+    image: "/images/lour.png",
     linkedinUrl: "https://www.linkedin.com/in/lourdrick",
   },
 ];
@@ -49,14 +49,14 @@ export default function MeetOurTeam() {
       <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
         <h2
           style={{
-            fontSize: "36px",
+            fontSize: "3rem",
             fontFamily: "DM Serif Text, serif",
             fontWeight: "bold",
             color: "#121211",
             textAlign: "center",
             marginBottom: "2rem",
           }}
-          className="md:text-5xl md:mb-12"
+          className="md:mb-12"
         >
           Meet Our Team
         </h2>
@@ -65,7 +65,7 @@ export default function MeetOurTeam() {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: "0.25rem",
+            gap: "1.5rem",
             maxWidth: "900px",
             margin: "0 auto",
             justifyContent: "center",

@@ -63,7 +63,7 @@ export default function ProcessCard({
       {/* Content Container */}
       <div style={{ padding: '1.5rem' }}>
         <h3 style={{
-          fontSize: '22px',
+          fontSize: '24px',
           fontFamily: 'DM Serif Text, serif',
           fontWeight: 'bold',
           color: '#121211',
@@ -72,7 +72,7 @@ export default function ProcessCard({
           {title}
         </h3>
         <p style={{
-          fontSize: '14px',
+          fontSize: '16px',
           color: '#555555',
           lineHeight: '1.6',
           marginBottom: '1.25rem',
@@ -81,38 +81,78 @@ export default function ProcessCard({
         </p>
 
         {/* Tags/Links */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-          {tags.map((tag, index) => (
-            <a
-              key={index}
-              href={tag.href || '#'}
-              target={tag.href ? '_blank' : undefined}
-              rel={tag.href ? 'noopener noreferrer' : undefined}
-              style={{
-                display: 'inline-block',
-                padding: '0.5rem 1rem',
-                backgroundColor: '#690B22',
-                color: '#F8F3ED',
-                borderRadius: '9999px',
-                fontSize: '13px',
-                fontWeight: '600',
-                textDecoration: 'none',
-                transition: 'all 200ms ease',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#8B0E2C'
-                e.currentTarget.style.transform = 'scale(1.05)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#690B22'
-                e.currentTarget.style.transform = 'scale(1)'
-              }}
-            >
-              {tag.label}
-            </a>
-          ))}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+          {tags.map((tag, index) => {
+            const isUnderConstruction = tag.href === '#';
+
+            if (isUnderConstruction) {
+              return (
+                <div
+                  key={index}
+                  role="button"
+                  tabIndex={0}
+                  style={{
+                    display: 'block',
+                    width: 'calc(50% - 0.375rem)',
+                    padding: '0.5rem 1rem',
+                    backgroundColor: '#FFFFFF',
+                    color: '#690B22',
+                    borderRadius: '9999px',
+                    fontSize: '14px',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    textAlign: 'center',
+                    transition: 'all 200ms ease',
+                    border: '2px solid #690B22',
+                    cursor: 'pointer',
+                    userSelect: 'none',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#F1E3D3'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#FFFFFF'
+                  }}
+                >
+                  {tag.label}
+                </div>
+              );
+            }
+
+            return (
+              <a
+                key={index}
+                href={tag.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'block',
+                  width: 'calc(50% - 0.375rem)',
+                  padding: '0.5rem 1rem',
+                  backgroundColor: '#690B22',
+                  color: '#F8F3ED',
+                  borderRadius: '9999px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  transition: 'all 200ms ease',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#8B0E2C'
+                  e.currentTarget.style.transform = 'scale(1.02)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#690B22'
+                  e.currentTarget.style.transform = 'scale(1)'
+                }}
+              >
+                {tag.label}
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -81,17 +81,17 @@ export default function Navigation() {
             style={{
               backgroundColor: "rgba(248, 243, 237, 0.2)",
               color: "#F8F3ED",
-              padding: "0.35rem 0.75rem",
+              padding: "0.45rem 0.9rem",
               borderRadius: "9999px",
               fontWeight: 600,
-              fontSize: "13px",
+              fontSize: "18px",
               border: "none",
               cursor: "pointer",
               transition: "all 250ms ease",
-              fontFamily: "Source Sans 3, sans-serif",
+              fontFamily: "DM Serif Text, serif",
               display: "flex",
               alignItems: "center",
-              minHeight: "32px",
+              minHeight: "44px",
             }}
             className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
             onMouseEnter={(e) => {
@@ -111,17 +111,17 @@ export default function Navigation() {
             style={{
               backgroundColor: "rgba(248, 243, 237, 0.2)",
               color: "#F8F3ED",
-              padding: "0.35rem 0.75rem",
+              padding: "0.45rem 0.9rem",
               borderRadius: "9999px",
               fontWeight: 600,
-              fontSize: "13px",
+              fontSize: "18px",
               border: "none",
               cursor: "pointer",
               transition: "all 250ms ease",
-              fontFamily: "Source Sans 3, sans-serif",
+              fontFamily: "DM Serif Text, serif",
               display: "flex",
               alignItems: "center",
-              minHeight: "32px",
+              minHeight: "44px",
             }}
             className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
             onMouseEnter={(e) => {
@@ -141,17 +141,17 @@ export default function Navigation() {
             style={{
               backgroundColor: "rgba(248, 243, 237, 0.2)",
               color: "#F8F3ED",
-              padding: "0.35rem 0.75rem",
+              padding: "0.45rem 0.9rem",
               borderRadius: "9999px",
               fontWeight: 600,
-              fontSize: "13px",
+              fontSize: "18px",
               border: "none",
               cursor: "pointer",
               transition: "all 250ms ease",
-              fontFamily: "Source Sans 3, sans-serif",
+              fontFamily: "DM Serif Text, serif",
               display: "flex",
               alignItems: "center",
-              minHeight: "32px",
+              minHeight: "44px",
             }}
             className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
             onMouseEnter={(e) => {
@@ -171,17 +171,17 @@ export default function Navigation() {
             style={{
               backgroundColor: "rgba(248, 243, 237, 0.2)",
               color: "#F8F3ED",
-              padding: "0.35rem 0.75rem",
+              padding: "0.45rem 0.9rem",
               borderRadius: "9999px",
               fontWeight: 600,
-              fontSize: "13px",
+              fontSize: "18px",
               border: "none",
               cursor: "pointer",
               transition: "all 250ms ease",
-              fontFamily: "Source Sans 3, sans-serif",
+              fontFamily: "DM Serif Text, serif",
               display: "flex",
               alignItems: "center",
-              minHeight: "32px",
+              minHeight: "44px",
             }}
             className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
             onMouseEnter={(e) => {
@@ -202,64 +202,64 @@ export default function Navigation() {
       <style>{`
         @media (min-width: 768px) {
           #nav-container {
-            padding: 0.875rem 1.5rem !important;
-            min-height: 62px !important;
+            padding: 0.95rem 1.75rem !important;
+            min-height: 70px !important;
           }
           #nav-container img {
-            height: 62px !important;
+            height: 70px !important;
           }
           #nav-container span {
-            font-size: 26px !important;
+            font-size: 30px !important;
           }
           #nav-container button {
-            padding: 0.45rem 0.9rem !important;
-            font-size: 14px !important;
-            min-height: 38px !important;
+            padding: 0.55rem 1.1rem !important;
+            font-size: 19px !important;
+            min-height: 48px !important;
           }
           #nav-container nav {
-            gap: 0.45rem !important;
+            gap: 0.55rem !important;
           }
         }
 
         @media (min-width: 1024px) {
           #nav-container {
-            padding: 0.95rem 2rem !important;
-            min-height: 68px !important;
+            padding: 1.05rem 2.25rem !important;
+            min-height: 76px !important;
           }
           #nav-container img {
-            height: 68px !important;
+            height: 76px !important;
           }
           #nav-container span {
-            font-size: 29px !important;
+            font-size: 32px !important;
           }
           #nav-container button {
-            padding: 0.5rem 1rem !important;
-            font-size: 15px !important;
-            min-height: 41px !important;
+            padding: 0.6rem 1.2rem !important;
+            font-size: 20px !important;
+            min-height: 50px !important;
           }
           #nav-container nav {
-            gap: 0.5rem !important;
+            gap: 0.6rem !important;
           }
         }
 
         @media (min-width: 1280px) {
           #nav-container {
-            padding: 1.05rem 2.5rem !important;
-            min-height: 74px !important;
+            padding: 1.15rem 2.75rem !important;
+            min-height: 82px !important;
           }
           #nav-container img {
-            height: 74px !important;
+            height: 82px !important;
           }
           #nav-container span {
-            font-size: 31px !important;
+            font-size: 34px !important;
           }
           #nav-container button {
-            padding: 0.55rem 1.1rem !important;
-            font-size: 16px !important;
-            min-height: 44px !important;
+            padding: 0.65rem 1.3rem !important;
+            font-size: 21px !important;
+            min-height: 52px !important;
           }
           #nav-container nav {
-            gap: 0.55rem !important;
+            gap: 0.65rem !important;
           }
         }
       `}</style>

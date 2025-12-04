@@ -8,7 +8,7 @@ const processSteps = [
     title: "A1: Needfinding",
     description:
       "Our needfinding journey in the adulting space. We conducted interviews with a diverse group of participants to uncover real emotions and pain points.",
-    image: "/images/elliott.png",
+    image: "/images/needfinding1.png",
     tags: [
       {
         label: "Slides (pdf)",
@@ -25,7 +25,7 @@ const processSteps = [
       "A2: Additional Needfinding, POVs, HMWs, Brainstorming & Experience Prototypes",
     description:
       "We generated POVs and 'How Might We?' questions from our interviews to look deeper into common problems. Then, we brainstormed solutions and picked three to experience prototype, testing the critical assumptions we made in each.",
-    image: "/images/elliott.png",
+    image: "/images/needfinding2.png",
     tags: [
       {
         label: "Slides (pdf)",
@@ -40,18 +40,21 @@ const processSteps = [
   {
     title: "A3: Website",
     description: "You're looking at it!",
-    image: "/images/elliott.png",
+    image: "/images/website.png",
     tags: [
-      { label: "Prototype", href: "#" },
-      { label: "Mockups", href: "#" },
+      { label: "Website", href: "#hero" },
     ],
   },
   {
     title: "A4: Concept Video",
     description:
-      "We landed on a solution that best addressed our users' problems: Chatatouille! We conducted market research and discussed ethical implications to confirm the novelty and inclusivity of our solution. Watch our concept video to understand Chatatouille's value (with no UI in sight)!.",
+      "We landed on a solution that best addressed our users' problems: Chatatouille! We conducted market research and discussed ethical implications to confirm the novelty and inclusivity of our solution. Watch our concept video to understand Chatatouille's value (with no UI in sight)!",
     image: "/images/elliott.png",
     tags: [
+      {
+        label: "Video",
+        href: "https://www.youtube.com/watch?v=gEbLrs14IjA",
+      },
       {
         label: "Video (mp4)",
         href: "https://drive.google.com/file/d/1XxTXsa3faUgLn-ic_eFm3hS-6TAAckh9/view?usp=sharing",
@@ -70,7 +73,7 @@ const processSteps = [
     title: "A5: Sketching, Low-fi Prototyping & Pilot Usability Testing",
     description:
       "Our low-fi prototype of Chatatouille. We created task flows and sketched them onto paper to test basic design choices on potential users, grounding our evolving design in real user experiences.",
-    image: "/images/elliott.png",
+    image: "/images/lowfi.png",
     tags: [
       {
         label: "Slides (pdf)",
@@ -81,7 +84,7 @@ const processSteps = [
         href: "https://docs.google.com/presentation/d/11k5PcJJE1-vq_3PMgAZo-NI7RpXi1DJN/edit?usp=sharing&ouid=113402074502964276518&rtpof=true&sd=true",
       },
       {
-        label: "Sketching Report (pdf)",
+        label: "Sketch Report (pdf)",
         href: "https://docs.google.com/document/d/1sYXHoygkW3-q4XB-aZBr8WDWcQ71JNX4T5GjyzPnQ5I/edit?usp=sharing",
       },
     ],
@@ -90,7 +93,7 @@ const processSteps = [
     title: "A6: Interactive Medium-Fi Prototype",
     description:
       "Our Medium-Fi Prototype of Chatatouille. We used Figma to implement a prototype of Chatatouille with our intended design elements and transitions. The Medium-Fi prototype does not have a backend, but it demonstrates our task flows in a higher fidelity than before.",
-    image: "/images/elliott.png",
+    image: "/images/mediumfi.png",
     tags: [
       {
         label: "Prototype (Figma)",
@@ -111,16 +114,24 @@ const processSteps = [
     ],
   },
   {
-    title: "A8: Hi-fi Portotype",
+    title: "A8: Hi-fi Prototype",
     description: "This section is still under construction.",
-    image: "/images/elliott.png",
+    image: "/images/underconstruction.jpeg",
     tags: [
+      {
+        label: "Prototype",
+        href: "#",
+      },
       {
         label: "Slides (pdf)",
         href: "#",
       },
       {
         label: "Slides (pptx)",
+        href: "#",
+      },
+      {
+        label: "README (pdf)",
         href: "#",
       },
     ],
@@ -129,22 +140,22 @@ const processSteps = [
     title: "A9: Heuristic Evaluation",
     description:
       "Members of another team evaluated our Medium-Fi prototype using Nielsen's heuristics (plus two more). They compiled violations organized by severity for each task, and we synthesized their feedback to improve our design..",
-    image: "/images/elliott.png",
+    image: "/images/heuristic.png",
     tags: [
       {
-        label: "Slides (pdf)",
-        href: "#",
+        label: "Sheet (pdf)",
+        href: "https://drive.google.com/file/d/1TATe61E4LSTZvTZmYwUf4_wSKt5XMtdd/view?usp=sharing",
       },
       {
-        label: "Slides (pptx)",
-        href: "#",
+        label: "Sheet (xlsx)",
+        href: "https://docs.google.com/spreadsheets/d/1tlfSXQkwl9RMmr5BB_Dso7PMHCWQvgGdElvzpg4vgqI/edit?usp=sharing",
       },
     ],
   },
   {
     title: "A10: Poster, Pitch, Demo Video",
     description: "This section is still under construction.",
-    image: "/images/elliott.png",
+    image: "/images/underconstruction.jpeg",
     tags: [
       {
         label: "Slides (pdf)",
@@ -152,6 +163,26 @@ const processSteps = [
       },
       {
         label: "Slides (pptx)",
+        href: "#",
+      },
+      {
+        label: "Demo",
+        href: "#",
+      },
+      {
+        label: "Demo (mp4)",
+        href: "#",
+      },
+      {
+        label: "Script (pdf)",
+        href: "#",
+      },
+      {
+        label: "Pitch (pdf)",
+        href: "#",
+      },
+      {
+        label: "Poster (pdf)",
         href: "#",
       },
     ],
@@ -159,14 +190,10 @@ const processSteps = [
   {
     title: "A11: Final Report",
     description: "This section is still under construction.",
-    image: "/images/elliott.png",
+    image: "/images/underconstruction.jpeg",
     tags: [
       {
-        label: "Slides (pdf)",
-        href: "#",
-      },
-      {
-        label: "Slides (pptx)",
+        label: "Final Report (pdf)",
         href: "#",
       },
     ],
@@ -191,7 +218,7 @@ export default function OurProcess() {
       <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
         <h2
           style={{
-            fontSize: "2.5rem",
+            fontSize: "3rem",
             fontFamily: "DM Serif Text, serif",
             fontWeight: "bold",
             color: "#121211",
@@ -203,7 +230,7 @@ export default function OurProcess() {
         </h2>
         <p
           style={{
-            fontSize: "16px",
+            fontSize: "18px",
             color: "#555555",
             textAlign: "center",
             marginBottom: "3rem",

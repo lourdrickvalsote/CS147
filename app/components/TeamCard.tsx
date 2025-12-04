@@ -37,7 +37,7 @@ export default function TeamCard({
 
       {/* Content */}
       <h3 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontFamily: 'DM Serif Text, serif',
         fontWeight: 'bold',
         color: '#121211',
@@ -46,7 +46,7 @@ export default function TeamCard({
         {name}
       </h3>
       <p style={{
-        fontSize: '14px',
+        fontSize: '15px',
         fontWeight: '600',
         color: '#690B22',
         marginBottom: '1rem',
