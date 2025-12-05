@@ -9,62 +9,88 @@ export default function Footer() {
     <footer
       ref={elementRef}
       style={{
-        backgroundColor: "#121211",
-        color: "#F8F3ED",
-        padding: "4rem 1rem",
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.6s ease, transform 0.6s ease",
+        backgroundColor: "var(--color-charcoal)",
+        color: "var(--color-cream)",
+        padding: "5rem 1.5rem 3rem 1.5rem",
+        position: "relative",
+        overflow: "hidden",
       }}
-      className="md:py-16"
     >
-      <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
+      {/* Decorative top border */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "1px",
+          background: "rgba(105, 11, 34, 0.2)",
+        }}
+      />
+
+      <div
+        style={{
+          maxWidth: "90rem",
+          margin: "0 auto",
+          position: "relative",
+          zIndex: 1,
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? "translateY(0)" : "translateY(30px)",
+          transition: "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+        }}
+      >
+        {/* Main Footer Content */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "2rem",
+            gap: "3rem",
+            marginBottom: "4rem",
           }}
         >
-          {/* Column 1: Brand */}
-          <div>
+          {/* Brand Column */}
+          <div style={{ maxWidth: "350px" }}>
             <h4
               style={{
-                fontSize: "22px",
-                fontFamily: "DM Serif Text, serif",
-                fontWeight: "bold",
-                marginBottom: "0.75rem",
-                color: "#F1E3D3",
+                fontFamily: "Spectral, serif",
+                fontSize: "32px",
+                fontWeight: "800",
+                marginBottom: "1rem",
+                color: "var(--color-tan)",
+                letterSpacing: "-0.02em",
               }}
             >
               Chatatouille
             </h4>
             <p
               style={{
-                fontSize: "15px",
-                color: "#CCCCCC",
-                lineHeight: "1.6",
+                fontFamily: "Outfit, sans-serif",
+                fontSize: "16px",
+                color: "var(--color-tan)",
+                lineHeight: "1.7",
                 margin: 0,
+                letterSpacing: "-0.01em",
+                opacity: 0.85,
               }}
             >
-              A Stanford CS 147 project exploring user-centered design for
-              cooking.
+              An innovative cooking companion designed through human-centered design principles at Stanford University. Empowering novice cooks with confidence.
             </p>
           </div>
 
-          {/* Column 2: Project */}
+          {/* Navigation Column */}
           <div>
             <h4
               style={{
+                fontFamily: "Outfit, sans-serif",
                 fontSize: "14px",
-                fontWeight: "600",
-                marginBottom: "1rem",
-                color: "#F1E3D3",
+                fontWeight: "700",
+                marginBottom: "1.25rem",
+                color: "var(--color-terracotta)",
                 textTransform: "uppercase",
-                letterSpacing: "1px",
+                letterSpacing: "1.5px",
               }}
             >
-              Project
+              Explore
             </h4>
             <ul
               style={{
@@ -73,156 +99,149 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              <li style={{ marginBottom: "0.75rem" }}>
-                <a
-                  href="#about"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById("about");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  style={{
-                    color: "#CCCCCC",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                    transition: "color 150ms ease",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "#F1E3D3")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#CCCCCC")
-                  }
-                >
-                  About
-                </a>
-              </li>
-              <li style={{ marginBottom: "0.75rem" }}>
-                <a
-                  href="#concept"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById("concept");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  style={{
-                    color: "#CCCCCC",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                    transition: "color 150ms ease",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "#F1E3D3")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#CCCCCC")
-                  }
-                >
-                  Video
-                </a>
-              </li>
-              <li style={{ marginBottom: "0.75rem" }}>
-                <a
-                  href="#team"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById("team");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  style={{
-                    color: "#CCCCCC",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                    transition: "color 150ms ease",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "#F1E3D3")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#CCCCCC")
-                  }
-                >
-                  Team
-                </a>
-              </li>
-              <li style={{ marginBottom: "0.75rem" }}>
-                <a
-                  href="#process"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById("process");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  style={{
-                    color: "#CCCCCC",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                    transition: "color 150ms ease",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "#F1E3D3")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#CCCCCC")
-                  }
-                >
-                  Process
-                </a>
-              </li>
+              {[
+                { label: "About", id: "about" },
+                { label: "Concept Video", id: "concept" },
+                { label: "Our Team", id: "team" },
+                { label: "Design Process", id: "process" },
+              ].map((item, index) => (
+                <li key={index} style={{ marginBottom: "0.875rem" }}>
+                  <a
+                    href={`#${item.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById(item.id);
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    style={{
+                      fontFamily: "Outfit, sans-serif",
+                      color: "var(--color-tan)",
+                      textDecoration: "none",
+                      fontSize: "16px",
+                      transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
+                      display: "inline-block",
+                      opacity: 0.85,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = "var(--color-terracotta)";
+                      e.currentTarget.style.transform = "translateX(4px)";
+                      e.currentTarget.style.opacity = "1";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = "var(--color-tan)";
+                      e.currentTarget.style.transform = "translateX(0)";
+                      e.currentTarget.style.opacity = "0.85";
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Course Info */}
+          {/* Course Info Column */}
           <div>
             <h4
               style={{
+                fontFamily: "Outfit, sans-serif",
                 fontSize: "14px",
-                fontWeight: "600",
-                marginBottom: "1rem",
-                color: "#F1E3D3",
+                fontWeight: "700",
+                marginBottom: "1.25rem",
+                color: "var(--color-terracotta)",
                 textTransform: "uppercase",
-                letterSpacing: "1px",
+                letterSpacing: "1.5px",
               }}
             >
-              Course
+              Academic Context
             </h4>
-            <p
+            <div
               style={{
-                fontSize: "15px",
-                color: "#CCCCCC",
-                lineHeight: "1.6",
-                margin: 0,
+                fontFamily: "Outfit, sans-serif",
+                fontSize: "16px",
+                color: "var(--color-tan)",
+                lineHeight: "1.8",
+                letterSpacing: "-0.01em",
               }}
             >
-              Stanford University
-              <br />
-              CS 147: Human-Computer Interaction
-              <br />
-              Fall 2025
-            </p>
+              <p style={{ margin: "0 0 0.5rem 0", fontWeight: "600", color: "var(--color-tan)" }}>
+                Stanford University
+              </p>
+              <p style={{ margin: "0 0 0.5rem 0", opacity: 0.85 }}>
+                CS 147: Human-Computer Interaction
+              </p>
+              <p style={{ margin: 0, opacity: 0.85 }}>
+                Fall 2025
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Bottom divider and copyright */}
+        {/* Divider */}
         <div
           style={{
-            borderTop: "1px solid rgba(248, 243, 237, 0.2)",
-            marginTop: "3rem",
-            paddingTop: "2rem",
-            textAlign: "center",
+            height: "1px",
+            background: "rgba(232, 213, 196, 0.15)",
+            marginBottom: "2.5rem",
           }}
+        />
+
+        {/* Bottom Section */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1.5rem",
+          }}
+          id="footer-bottom"
         >
-          <p
+          {/* Team initials */}
+          <div
             style={{
-              fontSize: "14px",
-              color: "#999999",
-              margin: 0,
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
             }}
           >
-            &copy; 2025 Chatatouille. All rights reserved.
+            <span
+              style={{
+                fontFamily: "Spectral, serif",
+                fontSize: "13px",
+                fontWeight: "600",
+                color: "var(--color-tan)",
+                letterSpacing: "0.5px",
+                opacity: 0.6,
+              }}
+            >
+              Crafted with care by RD • ER • ELR • LDV
+            </span>
+          </div>
+
+          {/* Copyright */}
+          <p
+            style={{
+              fontFamily: "Outfit, sans-serif",
+              fontSize: "14px",
+              color: "var(--color-tan)",
+              margin: 0,
+              textAlign: "center",
+              opacity: 0.5,
+            }}
+          >
+            © 2025 Chatatouille. All rights reserved.
           </p>
         </div>
       </div>
+
+      <style>{`
+        @media (min-width: 768px) {
+          #footer-bottom {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 }

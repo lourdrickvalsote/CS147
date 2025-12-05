@@ -38,50 +38,94 @@ export default function MeetOurTeam() {
       ref={elementRef}
       id="team"
       style={{
-        padding: "2rem 1rem",
-        backgroundColor: "#F8F3ED",
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.6s ease, transform 0.6s ease",
+        padding: "8rem 1.5rem",
+        background: "#FBF8F3",
+        position: "relative",
+        overflow: "hidden",
       }}
-      className="md:py-24"
     >
-      <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
-        <h2
-          style={{
-            fontSize: "3rem",
-            fontFamily: "DM Serif Text, serif",
-            fontWeight: "bold",
-            color: "#121211",
-            textAlign: "center",
-            marginBottom: "2rem",
-          }}
-          className="md:mb-12"
-        >
-          Meet Our Team
-        </h2>
+      {/* Decorative blob on the right */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "10%",
+          right: "-5%",
+          width: "450px",
+          height: "450px",
+          borderRadius: "50%",
+          background: "var(--color-accent-gold)",
+          opacity: 0.04,
+          filter: "blur(100px)",
+        }}
+      />
 
+      <div style={{ maxWidth: "90rem", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        {/* Section Header */}
         <div
           style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "1.5rem",
-            maxWidth: "900px",
-            margin: "0 auto",
-            justifyContent: "center",
+            textAlign: "center",
+            marginBottom: "4.5rem",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+            transition: "opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
-          id="team-flex-container"
-          className="md:gap-1"
+        >
+          <h2
+            style={{
+              fontFamily: "Spectral, serif",
+              fontSize: "clamp(3rem, 6vw, 5rem)",
+              fontWeight: "800",
+              color: "var(--color-burgundy)",
+              marginBottom: "1rem",
+              letterSpacing: "-0.03em",
+              lineHeight: "1.1",
+            }}
+          >
+            Meet Our Team
+          </h2>
+          <div
+            style={{
+              width: "100px",
+              height: "4px",
+              background: "var(--color-burgundy-primary)",
+              margin: "0 auto 1.5rem auto",
+              borderRadius: "10px",
+            }}
+          />
+          <p
+            style={{
+              fontFamily: "Outfit, sans-serif",
+              fontSize: "19px",
+              color: "var(--color-gray)",
+              maxWidth: "600px",
+              margin: "0 auto",
+              lineHeight: "1.7",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            The creative minds behind Chatatouille
+          </p>
+        </div>
+
+        {/* Team Grid */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "2rem",
+            maxWidth: "1200px",
+            margin: "0 auto",
+          }}
+          id="team-grid"
         >
           {teamMembers.map((member, index) => (
             <div
               key={index}
               style={{
-                flex: "1 1 auto",
-                minWidth: "150px",
-                maxWidth: "calc(50% - 0.125rem)",
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(40px)",
+                transition: `opacity 1s cubic-bezier(0.16, 1, 0.3, 1) ${0.2 + index * 0.1}s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) ${0.2 + index * 0.1}s`,
               }}
-              id="team-card-wrapper"
             >
               <TeamCard
                 name={member.name}
@@ -93,31 +137,11 @@ export default function MeetOurTeam() {
           ))}
         </div>
       </div>
-      <style>{`
-        @media (min-width: 768px) {
-          .md\\:py-24 {
-            padding-top: 6rem;
-            padding-bottom: 6rem;
-          }
-          .md\\:text-5xl {
-            font-size: 48px;
-          }
-          .md\\:mb-12 {
-            margin-bottom: 3rem;
-          }
-          .md\\:gap-1 {
-            gap: 0.25rem;
-          }
-          #team-card-wrapper {
-            flex: 1 1 auto !important;
-            maxWidth: calc(33.333% - 0.167rem) !important;
-          }
-        }
 
+      <style>{`
         @media (min-width: 1024px) {
-          #team-card-wrapper {
-            flex: 1 1 auto !important;
-            maxWidth: calc(25% - 0.1875rem) !important;
+          #team-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
           }
         }
       `}</style>

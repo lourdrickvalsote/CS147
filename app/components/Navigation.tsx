@@ -2,8 +2,34 @@
 
 import Link from "next/link";
 import { getImagePath } from "@/app/lib/getBasePath";
+import { useState, useEffect } from "react";
 
 export default function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      // Determine active section based on scroll position
+      const sections = ["hero", "about", "concept", "team", "process"];
+      const scrollPosition = window.scrollY + 100; // Add offset for nav height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && scrollPosition >= section.offsetTop) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    handleScroll(); // Initial check
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -11,56 +37,78 @@ export default function Navigation() {
     }
   };
 
+  const navLinks = [
+    { id: "about", label: "About" },
+    { id: "concept", label: "Video" },
+    { id: "team", label: "Team" },
+    { id: "process", label: "Process" },
+  ];
+
   return (
     <header
-      style={{ backgroundColor: "#690B22" }}
-      className="fixed w-full top-0 z-50 shadow-lg"
+      style={{
+        backgroundColor: "var(--color-burgundy)",
+        transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        boxShadow: scrolled
+          ? "0 8px 32px rgba(0, 0, 0, 0.2)"
+          : "0 4px 16px rgba(0, 0, 0, 0.12)",
+      }}
+      className="fixed w-full top-0 z-50"
     >
       <div
         style={{
           maxWidth: "90rem",
           margin: "0 auto",
-          padding: "0.75rem 1rem",
+          padding: scrolled ? "0.75rem 1.5rem" : "1rem 1.5rem",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          height: "auto",
-          minHeight: "60px",
+          transition: "padding 0.3s ease",
         }}
         id="nav-container"
       >
         {/* Logo */}
         <Link
           href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "0.75rem",
+            gap: "1rem",
             textDecoration: "none",
-            height: "100%",
+            transition: "transform 0.2s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
           }}
         >
           <img
             src={getImagePath("/images/chatatouille-logo.png")}
             alt="Chatatouille"
             style={{
-              height: "45px",
+              height: scrolled ? "40px" : "50px",
               width: "auto",
               objectFit: "contain",
+              transition: "height 0.3s ease",
             }}
-            className="md:h-20 lg:h-24 xl:h-28"
           />
           <span
             style={{
-              color: "#F8F3ED",
-              fontSize: "20px",
-              fontWeight: "bold",
-              fontFamily: "DM Serif Text, serif",
+              color: "var(--color-cream)",
+              fontSize: scrolled ? "24px" : "28px",
+              fontWeight: "700",
+              fontFamily: "Spectral, serif",
               display: "none",
-              alignItems: "center",
-              height: "100%",
+              transition: "font-size 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+              letterSpacing: "-0.02em",
             }}
-            className="md:flex md:text-3xl lg:text-4xl xl:text-5xl"
+            className="logo-text"
           >
             Chatatouille
           </span>
@@ -70,196 +118,91 @@ export default function Navigation() {
         <nav
           style={{
             display: "flex",
-            gap: "0.25rem",
+            gap: "0.5rem",
             alignItems: "center",
-            height: "100%",
           }}
-          className="md:gap-2"
         >
-          <button
-            onClick={() => scrollToSection("about")}
-            style={{
-              backgroundColor: "rgba(248, 243, 237, 0.2)",
-              color: "#F8F3ED",
-              padding: "0.45rem 0.9rem",
-              borderRadius: "9999px",
-              fontWeight: 600,
-              fontSize: "18px",
-              border: "none",
-              cursor: "pointer",
-              transition: "all 250ms ease",
-              fontFamily: "DM Serif Text, serif",
-              display: "flex",
-              alignItems: "center",
-              minHeight: "44px",
-            }}
-            className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#F1E3D3";
-              e.currentTarget.style.color = "#690B22";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor =
-                "rgba(248, 243, 237, 0.2)";
-              e.currentTarget.style.color = "#F8F3ED";
-            }}
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("concept")}
-            style={{
-              backgroundColor: "rgba(248, 243, 237, 0.2)",
-              color: "#F8F3ED",
-              padding: "0.45rem 0.9rem",
-              borderRadius: "9999px",
-              fontWeight: 600,
-              fontSize: "18px",
-              border: "none",
-              cursor: "pointer",
-              transition: "all 250ms ease",
-              fontFamily: "DM Serif Text, serif",
-              display: "flex",
-              alignItems: "center",
-              minHeight: "44px",
-            }}
-            className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#F1E3D3";
-              e.currentTarget.style.color = "#690B22";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor =
-                "rgba(248, 243, 237, 0.2)";
-              e.currentTarget.style.color = "#F8F3ED";
-            }}
-          >
-            Video
-          </button>
-          <button
-            onClick={() => scrollToSection("team")}
-            style={{
-              backgroundColor: "rgba(248, 243, 237, 0.2)",
-              color: "#F8F3ED",
-              padding: "0.45rem 0.9rem",
-              borderRadius: "9999px",
-              fontWeight: 600,
-              fontSize: "18px",
-              border: "none",
-              cursor: "pointer",
-              transition: "all 250ms ease",
-              fontFamily: "DM Serif Text, serif",
-              display: "flex",
-              alignItems: "center",
-              minHeight: "44px",
-            }}
-            className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#F1E3D3";
-              e.currentTarget.style.color = "#690B22";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor =
-                "rgba(248, 243, 237, 0.2)";
-              e.currentTarget.style.color = "#F8F3ED";
-            }}
-          >
-            Team
-          </button>
-          <button
-            onClick={() => scrollToSection("process")}
-            style={{
-              backgroundColor: "rgba(248, 243, 237, 0.2)",
-              color: "#F8F3ED",
-              padding: "0.45rem 0.9rem",
-              borderRadius: "9999px",
-              fontWeight: 600,
-              fontSize: "18px",
-              border: "none",
-              cursor: "pointer",
-              transition: "all 250ms ease",
-              fontFamily: "DM Serif Text, serif",
-              display: "flex",
-              alignItems: "center",
-              minHeight: "44px",
-            }}
-            className="md:px-4 md:py-2 md:text-base lg:px-5 lg:py-3 lg:text-lg xl:px-6 xl:py-3 xl:text-xl"
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#F1E3D3";
-              e.currentTarget.style.color = "#690B22";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor =
-                "rgba(248, 243, 237, 0.2)";
-              e.currentTarget.style.color = "#F8F3ED";
-            }}
-          >
-            Process
-          </button>
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                style={{
+                  background: isActive
+                    ? "rgba(216, 101, 72, 0.25)"
+                    : "transparent",
+                  color: "var(--color-cream)",
+                  padding: "0.625rem 1.5rem",
+                  borderRadius: "16px",
+                  fontWeight: 600,
+                  fontSize: "15px",
+                  border: isActive
+                    ? "1.5px solid rgba(216, 101, 72, 0.5)"
+                    : "1.5px solid transparent",
+                  cursor: "pointer",
+                  transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                  fontFamily: "Outfit, sans-serif",
+                  position: "relative",
+                  overflow: "hidden",
+                  letterSpacing: "-0.01em",
+                  boxShadow: isActive ? "0 4px 16px rgba(216, 101, 72, 0.25)" : "none",
+                }}
+                className="nav-link"
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.background =
+                      "rgba(216, 101, 72, 0.15)";
+                    e.currentTarget.style.borderColor =
+                      "rgba(216, 101, 72, 0.3)";
+                  }
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.borderColor = "transparent";
+                  }
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                {link.label}
+              </button>
+            );
+          })}
         </nav>
       </div>
 
       <style>{`
         @media (min-width: 768px) {
+          .logo-text {
+            display: block !important;
+          }
+
           #nav-container {
-            padding: 0.95rem 1.75rem !important;
-            min-height: 70px !important;
+            padding: ${scrolled ? "1rem 2rem" : "1.25rem 2rem"} !important;
           }
-          #nav-container img {
-            height: 70px !important;
-          }
-          #nav-container span {
-            font-size: 30px !important;
-          }
-          #nav-container button {
-            padding: 0.55rem 1.1rem !important;
-            font-size: 19px !important;
-            min-height: 48px !important;
-          }
-          #nav-container nav {
-            gap: 0.55rem !important;
+
+          .nav-link {
+            font-size: 16px !important;
+            padding: 0.625rem 1.5rem !important;
           }
         }
 
         @media (min-width: 1024px) {
           #nav-container {
-            padding: 1.05rem 2.25rem !important;
-            min-height: 76px !important;
+            padding: ${scrolled ? "1rem 3rem" : "1.5rem 3rem"} !important;
           }
-          #nav-container img {
-            height: 76px !important;
-          }
-          #nav-container span {
-            font-size: 32px !important;
-          }
-          #nav-container button {
-            padding: 0.6rem 1.2rem !important;
-            font-size: 20px !important;
-            min-height: 50px !important;
-          }
-          #nav-container nav {
-            gap: 0.6rem !important;
+
+          nav {
+            gap: 0.75rem !important;
           }
         }
 
-        @media (min-width: 1280px) {
-          #nav-container {
-            padding: 1.15rem 2.75rem !important;
-            min-height: 82px !important;
-          }
-          #nav-container img {
-            height: 82px !important;
-          }
-          #nav-container span {
-            font-size: 34px !important;
-          }
-          #nav-container button {
-            padding: 0.65rem 1.3rem !important;
-            font-size: 21px !important;
-            min-height: 52px !important;
-          }
-          #nav-container nav {
-            gap: 0.65rem !important;
+        @media (max-width: 767px) {
+          .nav-link {
+            font-size: 14px !important;
+            padding: 0.5rem 0.75rem !important;
           }
         }
       `}</style>

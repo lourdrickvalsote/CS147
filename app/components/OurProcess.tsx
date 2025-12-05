@@ -40,10 +40,8 @@ const processSteps = [
   {
     title: "A3: Website",
     description: "You're looking at it!",
-    image: "/images/website.png",
-    tags: [
-      { label: "Website", href: "#hero" },
-    ],
+    image: "/images/website2.png",
+    tags: [{ label: "Website", href: "#hero" }],
   },
   {
     title: "A4: Concept Video",
@@ -116,7 +114,7 @@ const processSteps = [
   {
     title: "A8: Hi-fi Prototype",
     description: "This section is still under construction.",
-    image: "/images/underconstruction.jpeg",
+    image: "/images/hifi.png",
     tags: [
       {
         label: "Prototype",
@@ -124,11 +122,11 @@ const processSteps = [
       },
       {
         label: "Slides (pdf)",
-        href: "#",
+        href: "https://drive.google.com/file/d/1g8ezVLxgPWoyEVtQABfs_e8lEKcT1n8k/view?usp=sharing",
       },
       {
         label: "Slides (pptx)",
-        href: "#",
+        href: "https://docs.google.com/presentation/d/1uVEQ2wyR04jQFNW1yYcxzL1A6ta17Tu0/edit?usp=sharing&ouid=113402074502964276518&rtpof=true&sd=true",
       },
       {
         label: "README (pdf)",
@@ -139,7 +137,7 @@ const processSteps = [
   {
     title: "A9: Heuristic Evaluation",
     description:
-      "Members of another team evaluated our Medium-Fi prototype using Nielsen's heuristics (plus two more). They compiled violations organized by severity for each task, and we synthesized their feedback to improve our design..",
+      "Members of another team evaluated our Medium-Fi prototype using Nielsen's heuristics (plus two more). They compiled violations organized by severity for each task, and we synthesized their feedback to improve our design.",
     image: "/images/heuristic.png",
     tags: [
       {
@@ -155,16 +153,8 @@ const processSteps = [
   {
     title: "A10: Poster, Pitch, Demo Video",
     description: "This section is still under construction.",
-    image: "/images/underconstruction.jpeg",
+    image: "/images/pitch1.png",
     tags: [
-      {
-        label: "Slides (pdf)",
-        href: "#",
-      },
-      {
-        label: "Slides (pptx)",
-        href: "#",
-      },
       {
         label: "Demo",
         href: "#",
@@ -179,11 +169,11 @@ const processSteps = [
       },
       {
         label: "Pitch (pdf)",
-        href: "#",
+        href: "https://drive.google.com/file/d/1KfHfxKJWjoR-uMVH112iqvE_zvDDRwUO/view?usp=sharing",
       },
       {
         label: "Poster (pdf)",
-        href: "#",
+        href: "https://drive.google.com/file/d/1bUXDblFURR_sRtIKm5VXllRrYyl7RzhQ/view?usp=sharing",
       },
     ],
   },
@@ -208,58 +198,127 @@ export default function OurProcess() {
       ref={elementRef}
       id="process"
       style={{
-        padding: "3rem 1rem",
-        backgroundColor: "#F8F3ED",
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.6s ease, transform 0.6s ease",
+        padding: "8rem 1.5rem",
+        background: "#FBF8F3",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
-        <h2
-          style={{
-            fontSize: "3rem",
-            fontFamily: "DM Serif Text, serif",
-            fontWeight: "bold",
-            color: "#121211",
-            textAlign: "center",
-            marginBottom: "1.5rem",
-          }}
-        >
-          Our Design Process
-        </h2>
-        <p
-          style={{
-            fontSize: "18px",
-            color: "#555555",
-            textAlign: "center",
-            marginBottom: "3rem",
-            maxWidth: "750px",
-            margin: "0 auto 3rem auto",
-            lineHeight: "1.6",
-          }}
-        >
-          Learn more about how Chatatouille was created.
-        </p>
+      {/* Decorative elements */}
+      <div
+        style={{
+          position: "absolute",
+          top: "20%",
+          left: "-8%",
+          width: "550px",
+          height: "550px",
+          borderRadius: "50%",
+          background: "var(--color-burgundy)",
+          opacity: 0.03,
+          filter: "blur(120px)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "15%",
+          right: "-8%",
+          width: "500px",
+          height: "500px",
+          borderRadius: "50%",
+          background: "var(--color-terracotta)",
+          opacity: 0.04,
+          filter: "blur(100px)",
+        }}
+      />
 
-        {/* Responsive Grid Layout */}
+      <div
+        style={{
+          maxWidth: "90rem",
+          margin: "0 auto",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {/* Section Header */}
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "4.5rem",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+            transition:
+              "opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "Spectral, serif",
+              fontSize: "clamp(3rem, 6vw, 5rem)",
+              fontWeight: "800",
+              color: "var(--color-burgundy)",
+              marginBottom: "1rem",
+              letterSpacing: "-0.03em",
+              lineHeight: "1.1",
+            }}
+          >
+            Our Design Process
+          </h2>
+          <div
+            style={{
+              width: "100px",
+              height: "4px",
+              background: "var(--color-burgundy-primary)",
+              margin: "0 auto 1.5rem auto",
+              borderRadius: "10px",
+            }}
+          />
+          <p
+            style={{
+              fontFamily: "Outfit, sans-serif",
+              fontSize: "19px",
+              color: "var(--color-gray)",
+              maxWidth: "700px",
+              margin: "0 auto",
+              lineHeight: "1.7",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            From needfinding to final prototype—explore our complete design
+            journey through CS 147
+          </p>
+        </div>
+
+        {/* Process Cards Grid */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "2rem",
+            gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
+            gap: "2.5rem",
             maxWidth: "1200px",
             margin: "0 auto",
           }}
         >
           {processSteps.map((step, index) => (
-            <ProcessCard
+            <div
               key={index}
-              title={step.title}
-              description={step.description}
-              image={step.image}
-              tags={step.tags}
-            />
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(50px)",
+                transition: `opacity 1s cubic-bezier(0.16, 1, 0.3, 1) ${
+                  0.15 + index * 0.08
+                }s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) ${
+                  0.15 + index * 0.08
+                }s`,
+              }}
+            >
+              <ProcessCard
+                title={step.title}
+                description={step.description}
+                image={step.image}
+                tags={step.tags}
+              />
+            </div>
           ))}
         </div>
       </div>

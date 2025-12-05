@@ -11,88 +11,155 @@ export default function ConceptVideo() {
       ref={elementRef}
       id="concept"
       style={{
-        padding: "2rem 1rem",
-        backgroundColor: "#F8F3ED",
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.6s ease, transform 0.6s ease",
+        padding: "8rem 1.5rem",
+        background: "#FBF8F3",
+        position: "relative",
+        overflow: "hidden",
       }}
-      className="md:py-24"
     >
-      <div style={{ maxWidth: "90rem", margin: "0 auto" }}>
-        <h2
-          style={{
-            fontSize: "3rem",
-            fontFamily: "DM Serif Text, serif",
-            fontWeight: "bold",
-            color: "#121211",
-            textAlign: "center",
-            marginBottom: "2rem",
-          }}
-          className="md:mb-12"
-        >
-          Concept Video
-        </h2>
+      {/* Decorative organic blob */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-10%",
+          left: "-5%",
+          width: "500px",
+          height: "500px",
+          borderRadius: "50%",
+          background: "var(--color-terracotta)",
+          opacity: 0.04,
+          filter: "blur(100px)",
+        }}
+      />
 
-        {/* Outer Flexbox - Video and Text/Awards Column */}
+      <div
+        style={{
+          maxWidth: "90rem",
+          margin: "0 auto",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {/* Refined Section Header */}
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "2rem",
-            alignItems: "center",
+            textAlign: "center",
+            marginBottom: "4rem",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+            transition:
+              "opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
-          id="concept-outer-flex"
         >
-          {/* Left Column - Video */}
+          <h2
+            style={{
+              fontFamily: "Spectral, serif",
+              fontSize: "clamp(3rem, 6vw, 5rem)",
+              fontWeight: "800",
+              color: "var(--color-burgundy)",
+              marginBottom: "1rem",
+              letterSpacing: "-0.03em",
+              lineHeight: "1.1",
+            }}
+          >
+            Concept Video
+          </h2>
           <div
             style={{
-              backgroundColor: "#121211",
-              borderRadius: "12px",
-              overflow: "hidden",
-              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
+              width: "100px",
+              height: "4px",
+              background: "var(--gradient-terracotta)",
+              margin: "0 auto",
+              borderRadius: "10px",
             }}
-            id="concept-video"
+          />
+        </div>
+
+        {/* Two-Column Layout with Cinematic Video */}
+        <div
+          style={{
+            display: "grid",
+            gap: "3rem",
+            alignItems: "start",
+            gridTemplateColumns: "1fr",
+          }}
+          id="concept-grid"
+        >
+          {/* Left Column - Cinematic Video Player */}
+          <div
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible
+                ? "translateX(0) scale(1)"
+                : "translateX(-40px) scale(0.98)",
+              transition:
+                "opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s",
+            }}
           >
-            <video
-              width="100%"
-              height="auto"
-              controls
+            <div
               style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
+                position: "relative",
+                borderRadius: "24px",
+                overflow: "hidden",
+                boxShadow:
+                  "0 24px 72px rgba(105, 11, 34, 0.18), 0 8px 24px rgba(105, 11, 34, 0.12)",
+                background: "var(--color-charcoal)",
               }}
-              poster={getImagePath("/images/elliott.png")}
-              title="Chatatouille Concept Video - CS 147 Film Festival"
-              aria-label="Chatatouille concept video showcasing the app's features for helping novice cooks master recipes"
             >
-              <source
-                src={getImagePath("/images/conceptvideo_final.mp4")}
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+              <video
+                width="100%"
+                height="auto"
+                controls
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                }}
+                poster={getImagePath("/images/elliott.png")}
+                title="Chatatouille Concept Video - CS 147 Film Festival"
+                aria-label="Chatatouille concept video showcasing the app's features for helping novice cooks master recipes"
+              >
+                <source
+                  src={getImagePath("/images/conceptvideo_final.mp4")}
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
 
-          {/* Inner Flexbox - Context Text and Awards */}
+          {/* Right Column - Story & Awards */}
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "2rem",
-              flex: 1,
-              minWidth: 0,
+              gap: "2.5rem",
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateX(0)" : "translateX(40px)",
+              transition:
+                "opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s",
             }}
-            id="concept-text-awards"
           >
-            <div>
+            {/* Story Container */}
+            <div
+              style={{
+                background: "rgba(255, 255, 255, 0.85)",
+                backdropFilter: "blur(20px)",
+                borderRadius: "20px",
+                padding: "2.5rem",
+                border: "1px solid rgba(105, 11, 34, 0.08)",
+                boxShadow: "0 8px 32px rgba(105, 11, 34, 0.08)",
+              }}
+            >
               <p
                 style={{
+                  fontFamily: "Outfit, sans-serif",
                   fontSize: "18px",
-                  color: "#333333",
+                  fontWeight: "400",
+                  color: "var(--color-charcoal)",
                   lineHeight: "1.8",
                   marginBottom: "1rem",
+                  letterSpacing: "-0.01em",
                 }}
               >
                 This concept video shares the story of a young college student
@@ -103,60 +170,186 @@ export default function ConceptVideo() {
               </p>
               <p
                 style={{
-                  fontSize: "18px",
-                  color: "#333333",
+                  fontFamily: "Outfit, sans-serif",
+                  fontSize: "17px",
+                  fontWeight: "400",
+                  color: "var(--color-gray)",
                   lineHeight: "1.8",
+                  letterSpacing: "-0.01em",
                 }}
               >
                 This video was featured in the CS 147 Film Festival, a showcase
                 of the most outstanding concept videos of the cohort.
-                Chatatouille was fortunate to win awards in multiple categories.
               </p>
             </div>
 
-            {/* Award Badges */}
+            {/* Awards Showcase */}
             <div
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: "1rem",
-                alignItems: "center",
-                justifyContent: "center",
-                flexWrap: "wrap",
+                background: "var(--color-warm-beige)",
+                borderRadius: "20px",
+                padding: "2rem",
+                border: "1px solid rgba(105, 11, 34, 0.08)",
               }}
             >
-              {/* Best Acting Award */}
-              <img
-                src={getImagePath("/images/bestacting.png")}
-                alt="Best Acting Award - CS 147 Film Festival"
+              <div
                 style={{
-                  width: "130px",
-                  height: "auto",
-                  objectFit: "contain",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  marginBottom: "1.5rem",
                 }}
-              />
+              >
+                {/* <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="var(--color-accent-gold)"
+                  stroke="var(--color-burgundy)"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                <h3
+                  style={{
+                    fontFamily: "Spectral, serif",
+                    fontSize: "24px",
+                    fontWeight: "700",
+                    color: "var(--color-burgundy)",
+                    margin: 0,
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  Award-Winning
+                </h3> */}
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+                  gap: "1.5rem",
+                  justifyItems: "center",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                  }}
+                >
+                  <img
+                    src={getImagePath("/images/bestacting.png")}
+                    alt="Best Acting Award"
+                    style={{
+                      width: "110px",
+                      height: "auto",
+                      objectFit: "contain",
+                      transition:
+                        "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform =
+                        "scale(1.1) rotate(5deg)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
+                    }}
+                  />
+                  {/* <span
+                    style={{
+                      fontFamily: "Outfit, sans-serif",
+                      fontSize: "12px",
+                      fontWeight: "600",
+                      color: "var(--color-gray)",
+                      textAlign: "center",
+                    }}
+                  >
+                    Best Acting
+                  </span> */}
+                </div>
 
-              {/* Best Overall Award */}
-              <img
-                src={getImagePath("/images/bestoverall.png")}
-                alt="Best Overall Award - CS 147 Film Festival"
-                style={{
-                  width: "130px",
-                  height: "auto",
-                  objectFit: "contain",
-                }}
-              />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                  }}
+                >
+                  <img
+                    src={getImagePath("/images/bestoverall.png")}
+                    alt="Best Overall Award"
+                    style={{
+                      width: "110px",
+                      height: "auto",
+                      objectFit: "contain",
+                      transition:
+                        "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform =
+                        "scale(1.1) rotate(-5deg)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
+                    }}
+                  />
+                  {/* <span
+                    style={{
+                      fontFamily: "Outfit, sans-serif",
+                      fontSize: "12px",
+                      fontWeight: "600",
+                      color: "var(--color-gray)",
+                      textAlign: "center",
+                    }}
+                  >
+                    Best Overall
+                  </span> */}
+                </div>
 
-              {/* Best Humor Award */}
-              <img
-                src={getImagePath("/images/besthumor.png")}
-                alt="Best Humor Award - CS 147 Film Festival"
-                style={{
-                  width: "130px",
-                  height: "auto",
-                  objectFit: "contain",
-                }}
-              />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                  }}
+                >
+                  <img
+                    src={getImagePath("/images/besthumor.png")}
+                    alt="Best Humor Award"
+                    style={{
+                      width: "110px",
+                      height: "auto",
+                      objectFit: "contain",
+                      transition:
+                        "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform =
+                        "scale(1.1) rotate(5deg)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
+                    }}
+                  />
+                  {/* <span
+                    style={{
+                      fontFamily: "Outfit, sans-serif",
+                      fontSize: "12px",
+                      fontWeight: "600",
+                      color: "var(--color-gray)",
+                      textAlign: "center",
+                    }}
+                  >
+                    Best Humor
+                  </span> */}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -164,16 +357,9 @@ export default function ConceptVideo() {
 
       <style>{`
         @media (min-width: 1024px) {
-          #concept-outer-flex {
-            flex-direction: row !important;
-            gap: 3rem !important;
-            align-items: flex-start !important;
-          }
-          #concept-text-awards {
-            flex: 1 !important;
-          }
-          #concept-video {
-            flex: 1 !important;
+          #concept-grid {
+            grid-template-columns: 1.2fr 1fr !important;
+            align-items: center !important;
           }
         }
       `}</style>
