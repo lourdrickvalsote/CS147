@@ -97,7 +97,7 @@ export default function Hero() {
             </span>
             <span
               style={{
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontSize: "13px",
                 fontWeight: "700",
                 letterSpacing: "1.5px",
@@ -112,10 +112,9 @@ export default function Hero() {
           {/* Massive Hero Title with Fraunces */}
           <h1
             style={{
-              fontFamily: "Fraunces, serif",
+              fontFamily: "DM Serif Display, serif",
               fontSize: "clamp(64px, 13vw, 160px)",
               fontWeight: "900",
-              fontVariationSettings: "'SOFT' 100, 'WONK' 1",
               color: "var(--color-burgundy-primary)",
               marginBottom: "1.5rem",
               lineHeight: "0.9",
@@ -135,7 +134,7 @@ export default function Hero() {
           {/* Elegant tagline */}
           <p
             style={{
-              fontFamily: "Crimson Pro, serif",
+              fontFamily: "DM Serif Text, serif",
               fontSize: "clamp(32px, 4.5vw, 56px)",
               color: "var(--color-terracotta-dark)",
               fontWeight: "600",
@@ -166,7 +165,7 @@ export default function Hero() {
           >
             <p
               style={{
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontSize: "19px",
                 fontWeight: "400",
                 color: "var(--color-charcoal)",
@@ -193,8 +192,7 @@ export default function Hero() {
               backdropFilter: "blur(20px)",
               borderRadius: "24px",
               border: "2px solid rgba(255, 255, 255, 0.5)",
-              boxShadow:
-                "0 12px 48px rgba(74, 14, 30, 0.12), 0 0 1px rgba(74, 14, 30, 0.1)",
+              boxShadow: "var(--shadow-heavy)",
               marginBottom: "4rem",
               maxWidth: "fit-content",
               opacity: isLoaded ? 1 : 0,
@@ -232,7 +230,7 @@ export default function Hero() {
             <div>
               <p
                 style={{
-                  fontFamily: "Outfit, sans-serif",
+                  fontFamily: "Source Sans 3, sans-serif",
                   fontSize: "15px",
                   fontWeight: "800",
                   color: "var(--color-burgundy)",
@@ -244,7 +242,7 @@ export default function Hero() {
               </p>
               <p
                 style={{
-                  fontFamily: "Outfit, sans-serif",
+                  fontFamily: "Source Sans 3, sans-serif",
                   fontSize: "13px",
                   fontWeight: "500",
                   color: "var(--color-gray)",
@@ -273,7 +271,7 @@ export default function Hero() {
           >
             <p
               style={{
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontSize: "13px",
                 color: "var(--color-gray)",
                 fontWeight: "600",

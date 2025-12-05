@@ -53,7 +53,7 @@ export default function ConceptVideo() {
         >
           <h2
             style={{
-              fontFamily: "Spectral, serif",
+              fontFamily: "DM Serif Display, serif",
               fontSize: "clamp(3rem, 6vw, 5rem)",
               fontWeight: "800",
               color: "var(--color-burgundy)",
@@ -68,8 +68,8 @@ export default function ConceptVideo() {
             style={{
               width: "100px",
               height: "4px",
-              background: "var(--gradient-terracotta)",
-              margin: "0 auto",
+              background: "var(--color-burgundy-primary)",
+              margin: "0 auto 1.5rem auto",
               borderRadius: "10px",
             }}
           />
@@ -141,19 +141,10 @@ export default function ConceptVideo() {
             }}
           >
             {/* Story Container */}
-            <div
-              style={{
-                background: "rgba(255, 255, 255, 0.85)",
-                backdropFilter: "blur(20px)",
-                borderRadius: "20px",
-                padding: "2.5rem",
-                border: "1px solid rgba(105, 11, 34, 0.08)",
-                boxShadow: "0 8px 32px rgba(105, 11, 34, 0.08)",
-              }}
-            >
+            <div>
               <p
                 style={{
-                  fontFamily: "Outfit, sans-serif",
+                  fontFamily: "Source Sans 3, sans-serif",
                   fontSize: "18px",
                   fontWeight: "400",
                   color: "var(--color-charcoal)",
@@ -170,7 +161,7 @@ export default function ConceptVideo() {
               </p>
               <p
                 style={{
-                  fontFamily: "Outfit, sans-serif",
+                  fontFamily: "Source Sans 3, sans-serif",
                   fontSize: "17px",
                   fontWeight: "400",
                   color: "var(--color-gray)",
@@ -184,14 +175,7 @@ export default function ConceptVideo() {
             </div>
 
             {/* Awards Showcase */}
-            <div
-              style={{
-                background: "var(--color-warm-beige)",
-                borderRadius: "20px",
-                padding: "2rem",
-                border: "1px solid rgba(105, 11, 34, 0.08)",
-              }}
-            >
+            <div>
               <div
                 style={{
                   display: "flex",
@@ -214,7 +198,7 @@ export default function ConceptVideo() {
                 </svg>
                 <h3
                   style={{
-                    fontFamily: "Spectral, serif",
+                    fontFamily: "DM Serif Display, serif",
                     fontSize: "24px",
                     fontWeight: "700",
                     color: "var(--color-burgundy)",
@@ -261,7 +245,7 @@ export default function ConceptVideo() {
                   />
                   {/* <span
                     style={{
-                      fontFamily: "Outfit, sans-serif",
+                      fontFamily: "Source Sans 3, sans-serif",
                       fontSize: "12px",
                       fontWeight: "600",
                       color: "var(--color-gray)",
@@ -300,7 +284,7 @@ export default function ConceptVideo() {
                   />
                   {/* <span
                     style={{
-                      fontFamily: "Outfit, sans-serif",
+                      fontFamily: "Source Sans 3, sans-serif",
                       fontSize: "12px",
                       fontWeight: "600",
                       color: "var(--color-gray)",
@@ -339,7 +323,7 @@ export default function ConceptVideo() {
                   />
                   {/* <span
                     style={{
-                      fontFamily: "Outfit, sans-serif",
+                      fontFamily: "Source Sans 3, sans-serif",
                       fontSize: "12px",
                       fontWeight: "600",
                       color: "var(--color-gray)",

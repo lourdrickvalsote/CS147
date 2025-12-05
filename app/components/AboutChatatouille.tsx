@@ -67,7 +67,7 @@ export default function AboutChatatouille() {
         <h2
           style={{
             fontSize: "clamp(3rem, 6vw, 5rem)",
-            fontFamily: "Spectral, serif",
+            fontFamily: "DM Serif Display, serif",
             fontWeight: "800",
             color: "var(--color-burgundy)",
             textAlign: "center",
@@ -107,7 +107,7 @@ export default function AboutChatatouille() {
             <p
               style={{
                 fontSize: "21px",
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontWeight: "500",
                 color: "var(--color-charcoal)",
                 lineHeight: "1.75",
@@ -122,7 +122,7 @@ export default function AboutChatatouille() {
             <p
               style={{
                 fontSize: "19px",
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontWeight: "400",
                 color: "var(--color-gray)",
                 lineHeight: "1.8",
@@ -163,7 +163,7 @@ export default function AboutChatatouille() {
                   justifyContent: "center",
                   transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                   flexShrink: 0,
-                  boxShadow: "0 4px 16px rgba(74, 14, 30, 0.2)",
+                  boxShadow: "var(--shadow-medium)",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform =
@@ -189,9 +189,9 @@ export default function AboutChatatouille() {
                     width: "100%",
                     borderRadius: "24px",
                     overflow: "hidden",
-                    boxShadow: "0 12px 48px rgba(0, 0, 0, 0.1)",
+                    boxShadow: "var(--shadow-medium)",
                     background: "white",
-                    padding: "1.5rem",
+                    padding: "clamp(0.75rem, 2vw, 1.5rem)",
                   }}
                 >
                   <img
@@ -205,7 +205,7 @@ export default function AboutChatatouille() {
                       objectFit: "contain",
                       display: "block",
                       transition: "opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-                      minHeight: "400px",
+                      minHeight: "clamp(250px, 40vw, 400px)",
                     }}
                   />
                 </div>
@@ -275,7 +275,7 @@ export default function AboutChatatouille() {
                   justifyContent: "center",
                   transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                   flexShrink: 0,
-                  boxShadow: "0 4px 16px rgba(74, 14, 30, 0.2)",
+                  boxShadow: "var(--shadow-medium)",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform =

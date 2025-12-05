@@ -43,6 +43,26 @@
     --color-cream: #F8F3ED;
     --color-tan: #E8D5C4;
     --color-charcoal: #3D2817;
+
+    /* Shadow System - 3 levels matching mobile app */
+    --shadow-subtle: 0 2px 8px rgba(105, 11, 34, 0.06), 0 1px 2px rgba(105, 11, 34, 0.04);
+    --shadow-medium: 0 8px 24px rgba(105, 11, 34, 0.12), 0 4px 8px rgba(105, 11, 34, 0.08);
+    --shadow-heavy: 0 16px 48px rgba(105, 11, 34, 0.18), 0 8px 16px rgba(105, 11, 34, 0.12);
+
+    /* Hover shadow states */
+    --shadow-subtle-hover: 0 4px 12px rgba(105, 11, 34, 0.1), 0 2px 4px rgba(105, 11, 34, 0.06);
+    --shadow-medium-hover: 0 12px 32px rgba(105, 11, 34, 0.16), 0 6px 12px rgba(105, 11, 34, 0.1);
+    --shadow-heavy-hover: 0 24px 64px rgba(105, 11, 34, 0.22), 0 12px 24px rgba(105, 11, 34, 0.14);
+
+    /* Spacing Scale (4px base) - matching mobile app */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-base: 16px;
+    --spacing-lg: 20px;
+    --spacing-xl: 24px;
+    --spacing-xxl: 28px;
+    --spacing-xxxl: 32px;
   }
 }
 
@@ -58,7 +78,7 @@ html {
 }
 
 body {
-  font-family: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--color-charcoal);
   background: #FBF8F3;
   background-attachment: fixed;
@@ -70,7 +90,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Spectral", "Fraunces", serif;
+  font-family: "DM Serif Display", "DM Serif Text", serif;
   color: var(--color-burgundy);
   font-weight: 700;
   line-height: 1.2;
@@ -87,7 +107,7 @@ h2 {
 }
 
 p {
-  font-family: "Outfit", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   line-height: 1.7;
 }
 
@@ -281,4 +301,57 @@ section {
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
+}
+
+/* Button Styles - matching mobile app PrimaryButton */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 37px;
+  padding: 0 24px;
+  background-color: var(--color-burgundy-primary);
+  color: white;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-medium);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
+  background-color: var(--color-burgundy-dark);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 37px;
+  padding: 0 24px;
+  background-color: white;
+  color: var(--color-burgundy-primary);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1.5px solid var(--color-burgundy-primary);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-subtle);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  background-color: var(--color-cream-light);
 }

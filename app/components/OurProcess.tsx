@@ -253,7 +253,7 @@ export default function OurProcess() {
         >
           <h2
             style={{
-              fontFamily: "Spectral, serif",
+              fontFamily: "DM Serif Display, serif",
               fontSize: "clamp(3rem, 6vw, 5rem)",
               fontWeight: "800",
               color: "var(--color-burgundy)",
@@ -273,29 +273,15 @@ export default function OurProcess() {
               borderRadius: "10px",
             }}
           />
-          <p
-            style={{
-              fontFamily: "Outfit, sans-serif",
-              fontSize: "19px",
-              color: "var(--color-gray)",
-              maxWidth: "700px",
-              margin: "0 auto",
-              lineHeight: "1.7",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            From needfinding to final prototype—explore our complete design
-            journey through CS 147
-          </p>
         </div>
 
         {/* Process Cards Grid */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
-            gap: "2.5rem",
-            maxWidth: "1200px",
+            gridTemplateColumns: "repeat(auto-fill, minmax(370px, 1fr))",
+            gap: "2rem",
+            maxWidth: "1400px",
             margin: "0 auto",
           }}
         >

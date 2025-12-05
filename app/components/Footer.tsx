@@ -9,8 +9,8 @@ export default function Footer() {
     <footer
       ref={elementRef}
       style={{
-        backgroundColor: "var(--color-charcoal)",
-        color: "var(--color-cream)",
+        backgroundColor: "var(--color-burgundy-primary)",
+        color: "var(--color-cream-light)",
         padding: "5rem 1.5rem 3rem 1.5rem",
         position: "relative",
         overflow: "hidden",
@@ -23,8 +23,34 @@ export default function Footer() {
           top: 0,
           left: 0,
           right: 0,
-          height: "1px",
-          background: "rgba(105, 11, 34, 0.2)",
+          height: "3px",
+          background: "rgba(248, 243, 237, 0.15)",
+        }}
+      />
+
+      {/* Subtle background texture overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: 0.03,
+          pointerEvents: "none",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* Decorative cream blob accent */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-10%",
+          right: "-5%",
+          width: "400px",
+          height: "400px",
+          borderRadius: "50%",
+          background: "rgba(248, 243, 237, 0.04)",
+          filter: "blur(80px)",
+          pointerEvents: "none",
         }}
       />
 
@@ -52,11 +78,11 @@ export default function Footer() {
           <div style={{ maxWidth: "350px" }}>
             <h4
               style={{
-                fontFamily: "Spectral, serif",
+                fontFamily: "DM Serif Display, serif",
                 fontSize: "32px",
                 fontWeight: "800",
                 marginBottom: "1rem",
-                color: "var(--color-tan)",
+                color: "var(--color-cream-light)",
                 letterSpacing: "-0.02em",
               }}
             >
@@ -64,9 +90,9 @@ export default function Footer() {
             </h4>
             <p
               style={{
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontSize: "16px",
-                color: "var(--color-tan)",
+                color: "var(--color-cream-light)",
                 lineHeight: "1.7",
                 margin: 0,
                 letterSpacing: "-0.01em",
@@ -81,11 +107,11 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontSize: "14px",
                 fontWeight: "700",
                 marginBottom: "1.25rem",
-                color: "var(--color-terracotta)",
+                color: "var(--color-cream-medium)",
                 textTransform: "uppercase",
                 letterSpacing: "1.5px",
               }}
@@ -114,8 +140,8 @@ export default function Footer() {
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }}
                     style={{
-                      fontFamily: "Outfit, sans-serif",
-                      color: "var(--color-tan)",
+                      fontFamily: "Source Sans 3, sans-serif",
+                      color: "var(--color-cream-light)",
                       textDecoration: "none",
                       fontSize: "16px",
                       transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -123,12 +149,12 @@ export default function Footer() {
                       opacity: 0.85,
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "var(--color-terracotta)";
+                      e.currentTarget.style.color = "white";
                       e.currentTarget.style.transform = "translateX(4px)";
                       e.currentTarget.style.opacity = "1";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "var(--color-tan)";
+                      e.currentTarget.style.color = "var(--color-cream-light)";
                       e.currentTarget.style.transform = "translateX(0)";
                       e.currentTarget.style.opacity = "0.85";
                     }}
@@ -144,11 +170,11 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontSize: "14px",
                 fontWeight: "700",
                 marginBottom: "1.25rem",
-                color: "var(--color-terracotta)",
+                color: "var(--color-cream-medium)",
                 textTransform: "uppercase",
                 letterSpacing: "1.5px",
               }}
@@ -157,14 +183,14 @@ export default function Footer() {
             </h4>
             <div
               style={{
-                fontFamily: "Outfit, sans-serif",
+                fontFamily: "Source Sans 3, sans-serif",
                 fontSize: "16px",
-                color: "var(--color-tan)",
+                color: "var(--color-cream-light)",
                 lineHeight: "1.8",
                 letterSpacing: "-0.01em",
               }}
             >
-              <p style={{ margin: "0 0 0.5rem 0", fontWeight: "600", color: "var(--color-tan)" }}>
+              <p style={{ margin: "0 0 0.5rem 0", fontWeight: "600", color: "var(--color-cream-light)" }}>
                 Stanford University
               </p>
               <p style={{ margin: "0 0 0.5rem 0", opacity: 0.85 }}>
@@ -206,10 +232,10 @@ export default function Footer() {
           >
             <span
               style={{
-                fontFamily: "Spectral, serif",
+                fontFamily: "DM Serif Display, serif",
                 fontSize: "13px",
                 fontWeight: "600",
-                color: "var(--color-tan)",
+                color: "var(--color-cream-light)",
                 letterSpacing: "0.5px",
                 opacity: 0.6,
               }}
@@ -221,9 +247,9 @@ export default function Footer() {
           {/* Copyright */}
           <p
             style={{
-              fontFamily: "Outfit, sans-serif",
+              fontFamily: "Source Sans 3, sans-serif",
               fontSize: "14px",
-              color: "var(--color-tan)",
+              color: "var(--color-cream-light)",
               margin: 0,
               textAlign: "center",
               opacity: 0.5,

@@ -50,8 +50,8 @@ export default function Navigation() {
         backgroundColor: "var(--color-burgundy)",
         transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         boxShadow: scrolled
-          ? "0 8px 32px rgba(0, 0, 0, 0.2)"
-          : "0 4px 16px rgba(0, 0, 0, 0.12)",
+          ? "var(--shadow-heavy)"
+          : "var(--shadow-medium)",
       }}
       className="fixed w-full top-0 z-50"
     >
@@ -103,7 +103,7 @@ export default function Navigation() {
               color: "var(--color-cream)",
               fontSize: scrolled ? "24px" : "28px",
               fontWeight: "700",
-              fontFamily: "Spectral, serif",
+              fontFamily: "DM Serif Display, serif",
               display: "none",
               transition: "font-size 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
               letterSpacing: "-0.02em",
@@ -142,7 +142,7 @@ export default function Navigation() {
                     : "1.5px solid transparent",
                   cursor: "pointer",
                   transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-                  fontFamily: "Outfit, sans-serif",
+                  fontFamily: "Source Sans 3, sans-serif",
                   position: "relative",
                   overflow: "hidden",
                   letterSpacing: "-0.01em",

@@ -33,8 +33,8 @@ export default function ProcessCard({
         overflow: 'hidden',
         border: '1px solid rgba(105, 11, 34, 0.08)',
         boxShadow: isHovered
-          ? '0 24px 64px rgba(105, 11, 34, 0.16), 0 8px 24px rgba(105, 11, 34, 0.1)'
-          : '0 12px 40px rgba(105, 11, 34, 0.1), 0 4px 12px rgba(105, 11, 34, 0.06)',
+          ? 'var(--shadow-heavy)'
+          : 'var(--shadow-medium)',
         transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
         transform: isHovered ? 'translateY(-8px)' : 'translateY(0)',
       }}
@@ -82,7 +82,7 @@ export default function ProcessCard({
       <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
         <h3
           style={{
-            fontFamily: 'Spectral, serif',
+            fontFamily: 'DM Serif Text, serif',
             fontSize: '22px',
             fontWeight: '700',
             color: 'var(--color-burgundy)',
@@ -95,7 +95,7 @@ export default function ProcessCard({
         </h3>
         <p
           style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Source Sans 3, sans-serif',
             fontSize: '16px',
             color: 'var(--color-charcoal)',
             lineHeight: '1.7',
@@ -108,7 +108,7 @@ export default function ProcessCard({
         </p>
 
         {/* Tags/Links with refined styling */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.625rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(180px, 1fr))', gap: '0.5rem' }}>
           {tags.map((tag, index) => {
             const isUnderConstruction = tag.href === '#';
 
@@ -119,21 +119,24 @@ export default function ProcessCard({
                   role="button"
                   tabIndex={0}
                   style={{
-                    display: 'inline-flex',
+                    display: 'flex',
                     alignItems: 'center',
-                    padding: '0.625rem 1.25rem',
+                    justifyContent: 'center',
+                    padding: '0.75rem 1.5rem',
                     background: 'transparent',
                     color: 'var(--color-gray)',
                     border: '1.5px solid rgba(107, 107, 107, 0.3)',
                     borderRadius: '50px',
-                    fontSize: '13px',
+                    fontSize: '12px',
                     fontWeight: '600',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Source Sans 3, sans-serif',
+                    whiteSpace: 'nowrap',
                     textDecoration: 'none',
                     transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                     cursor: 'not-allowed',
                     letterSpacing: '0.3px',
                     opacity: 0.5,
+                    width: '100%',
                   }}
                 >
                   {tag.label}
@@ -148,21 +151,24 @@ export default function ProcessCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: 'inline-flex',
+                  display: 'flex',
                   alignItems: 'center',
-                  padding: '0.625rem 1.25rem',
+                  justifyContent: 'center',
+                  padding: '0.75rem 1.5rem',
                   background: 'var(--color-burgundy-primary)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '50px',
-                  fontSize: '13px',
+                  fontSize: '12px',
                   fontWeight: '600',
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Source Sans 3, sans-serif',
                   textDecoration: 'none',
+                  whiteSpace: 'nowrap',
                   transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                   cursor: 'pointer',
-                  boxShadow: '0 4px 12px rgba(105, 11, 34, 0.2)',
+                  boxShadow: 'var(--shadow-subtle)',
                   letterSpacing: '0.3px',
+                  width: '100%',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)';

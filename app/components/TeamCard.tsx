@@ -25,7 +25,7 @@ export default function TeamCard({
           borderRadius: '50%',
           overflow: 'hidden',
           border: '4px solid #690B22',
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
+          boxShadow: 'var(--shadow-medium)',
         }}>
           <img
             src={getImagePath(image)}
@@ -47,6 +47,7 @@ export default function TeamCard({
       </h3>
       <p style={{
         fontSize: '15px',
+        fontFamily: 'Source Sans 3, sans-serif',
         fontWeight: '600',
         color: '#690B22',
         marginBottom: '1rem',

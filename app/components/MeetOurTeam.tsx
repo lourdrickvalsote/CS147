@@ -59,7 +59,14 @@ export default function MeetOurTeam() {
         }}
       />
 
-      <div style={{ maxWidth: "90rem", margin: "0 auto", position: "relative", zIndex: 1 }}>
+      <div
+        style={{
+          maxWidth: "90rem",
+          margin: "0 auto",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         {/* Section Header */}
         <div
           style={{
@@ -67,12 +74,13 @@ export default function MeetOurTeam() {
             marginBottom: "4.5rem",
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(30px)",
-            transition: "opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)",
+            transition:
+              "opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
           <h2
             style={{
-              fontFamily: "Spectral, serif",
+              fontFamily: "DM Serif Display, serif",
               fontSize: "clamp(3rem, 6vw, 5rem)",
               fontWeight: "800",
               color: "var(--color-burgundy)",
@@ -92,19 +100,6 @@ export default function MeetOurTeam() {
               borderRadius: "10px",
             }}
           />
-          <p
-            style={{
-              fontFamily: "Outfit, sans-serif",
-              fontSize: "19px",
-              color: "var(--color-gray)",
-              maxWidth: "600px",
-              margin: "0 auto",
-              lineHeight: "1.7",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            The creative minds behind Chatatouille
-          </p>
         </div>
 
         {/* Team Grid */}
@@ -124,7 +119,11 @@ export default function MeetOurTeam() {
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(40px)",
-                transition: `opacity 1s cubic-bezier(0.16, 1, 0.3, 1) ${0.2 + index * 0.1}s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) ${0.2 + index * 0.1}s`,
+                transition: `opacity 1s cubic-bezier(0.16, 1, 0.3, 1) ${
+                  0.2 + index * 0.1
+                }s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) ${
+                  0.2 + index * 0.1
+                }s`,
               }}
             >
               <TeamCard
